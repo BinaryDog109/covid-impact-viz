@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix cw1: <http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#> 
+select ?Industry ?responseNum ?continue ?temPause
+where { 
+		?Industry rdf:type cw1:SingleIndustry;
+    		cw1:respondSurveyNum ?responseNum;
+      		cw1:continuePercentage ?continue;
+        	cw1:temporaryPausePercentage ?temPause.
+}

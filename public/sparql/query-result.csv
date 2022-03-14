@@ -1,0 +1,13 @@
+Industry,responseNum,continue,temPause
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AccommodationAndFoodServiceActivities,516,0.182,0.806
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AdministrativeAndSupportServiceActivities,814,0.915,0.081
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ArtsEntertainmentAndRecreation,278,0.205,0.795
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Construction,284,0.732,0.261
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Education,318,0.868,0.126
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#HumanHealthAndSocialWorkActivities,144,0.938,0.049
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InformationAndCommunication,418,0.95,0.0451232
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Manufacturing,1097,0.79,0.206
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ProfessionalScientificAndTechnicalActivities,733,0.967,0.03
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#TransportationAndStorage,282,0.915,0.085
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WaterSupplySewerageWasteManagementAndRemediationActivities,70,0.9,0.1
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles,1030,0.752,0.243
