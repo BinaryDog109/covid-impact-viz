@@ -1,43 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-import { scaleBand, scaleLinear} from 'd3'
+import { scaleBand, scaleLinear, max } from "d3";
 
-import { useData } from './useData'
+import { useData } from "./useData";
 
 const margin = {
   top: 65,
-  left: 30,
-  bottom: 20,
-  right: 220,
+  left: 120,
+  bottom: 90,
+  right: 30,
 };
-const textOffset = 50
+const textOffset = 50;
 
-const innerHeight =
-  window.innerHeight - margin.top - margin.bottom;
-const innerWidth =
-  window.innerWidth - margin.left - margin.right;
+const drawHeight = window.innerHeight - margin.top - margin.bottom;
+const drawWidth = window.innerWidth - margin.left - margin.right;
 
 function App() {
-  const data = useData()
-  console.log(data)
+  const data = useData();
+  if (!data) return <h1 className="no-data-title">Loading data...</h1>;
+
+  console.log(data);
+
+  const xAccessor = (elem) => +elem.responseNum;
+  const yAccessor = (elem) => elem.Industry.replace(data.ontURI, "");
+  // x axis: response number
+  // y axis: industry name
+  const xMapping = scaleLinear()
+    .domain([0, max(data, xAccessor)])
+    .range([0, drawWidth])
+    .nice();
+
+  const yMapping = scaleBand()
+    .domain(data.map(yAccessor))
+    .range([0, drawHeight]);
+
+  const XAxisLine = () =>
+    xMapping.ticks().map((tickValue) => (
+      <g className="tick-group" key={tickValue} transform={`translate(${xMapping(tickValue)}, 0)`}>
+        <line y2={drawHeight} />
+        <text y={drawHeight}>{tickValue}</text>
+      </g>
+    ));
+  
+    const yAxis = () => 
+      yMapping.domain().map(domain => (
+        <text y={yMapping(domain)}>{domain}</text>
+      ))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          { data? "\nLoaded" : "Nah" }
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <svg
+        width={window.innerWidth}
+        height={window.innerHeight}
+      >
+        <g transform={`translate(${margin.left}, ${margin.top})`}><XAxisLine />
+        <yAxis /></g>
+        
+      </svg>
     </div>
   );
 }
