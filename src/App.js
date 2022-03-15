@@ -5,16 +5,19 @@ import { scaleBand, scaleLinear, max } from "d3";
 
 import { useData } from "./useData";
 
-const margin = {
-  top: 65,
-  left: 120,
+const diagramSpace = {
+  top: 35,
+  left: 300,
   bottom: 90,
-  right: 30,
+  right: 90,
 };
+const outsideMargin = 20
 const textOffset = 50;
 
-const drawHeight = window.innerHeight - margin.top - margin.bottom;
-const drawWidth = window.innerWidth - margin.left - margin.right;
+const displayWidth = window.innerWidth
+const displayHeight = window.innerHeight
+const drawHeight = displayHeight - diagramSpace.top - diagramSpace.bottom;
+const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
 function App() {
   const data = useData();
@@ -35,7 +38,7 @@ function App() {
     .domain(data.map(yAccessor))
     .range([0, drawHeight]);
 
-  const XAxisLine = () =>
+  const XAxisChannel = () =>
     xMapping.ticks().map((tickValue) => (
       <g className="tick-group" key={tickValue} transform={`translate(${xMapping(tickValue)}, 0)`}>
         <line y2={drawHeight} />
@@ -43,19 +46,19 @@ function App() {
       </g>
     ));
   
-    const yAxis = () => 
-      yMapping.domain().map(domain => (
-        <text y={yMapping(domain)}>{domain}</text>
+    const YAxisChannel = () => 
+      yMapping.domain().map(domainValue => (
+        <text y={yMapping(domainValue)}>{domainValue}</text>
       ))
 
   return (
-    <div className="container">
+    <div className="histogram">
       <svg
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width={displayWidth}
+        height={displayHeight}
       >
-        <g transform={`translate(${margin.left}, ${margin.top})`}><XAxisLine />
-        <yAxis /></g>
+        <g transform={`translate(${diagramSpace.left}, ${diagramSpace.top})`}><XAxisChannel />
+        <YAxisChannel /></g>
         
       </svg>
     </div>

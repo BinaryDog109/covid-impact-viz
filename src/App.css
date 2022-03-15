@@ -1,6 +1,4 @@
-body {
-  margin: 0;
-}
+
 
 .App {
   text-align: center;
@@ -46,4 +44,8 @@ body {
 }
 .tick-group text {
   text-anchor: middle;
+}
+
+svg {
+  vertical-align: top;
 }
