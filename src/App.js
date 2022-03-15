@@ -5,17 +5,20 @@ import { scaleBand, scaleLinear, max } from "d3";
 
 import { useData } from "./useData";
 
+import { XAxisChannel } from "./components/XAxisChannel";
+import { YAxisChannel } from "./components/YAxisChannel";
+
 const diagramSpace = {
   top: 35,
-  left: 300,
+  left: 350,
   bottom: 90,
   right: 90,
 };
-const outsideMargin = 20
+const outsideMargin = 20;
 const textOffset = 50;
 
-const displayWidth = window.innerWidth
-const displayHeight = window.innerHeight
+const displayWidth = window.innerWidth;
+const displayHeight = window.innerHeight;
 const drawHeight = displayHeight - diagramSpace.top - diagramSpace.bottom;
 const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
@@ -36,30 +39,32 @@ function App() {
 
   const yMapping = scaleBand()
     .domain(data.map(yAccessor))
-    .range([0, drawHeight]);
+    .range([0, drawHeight])
+    .paddingInner(0.15);
+    ;
 
-  const XAxisChannel = () =>
-    xMapping.ticks().map((tickValue) => (
-      <g className="tick-group" key={tickValue} transform={`translate(${xMapping(tickValue)}, 0)`}>
-        <line y2={drawHeight} />
-        <text y={drawHeight}>{tickValue}</text>
-      </g>
-    ));
-  
-    const YAxisChannel = () => 
-      yMapping.domain().map(domainValue => (
-        <text y={yMapping(domainValue)}>{domainValue}</text>
-      ))
+    const Marks = () => (
+      data.map(d => (
+        <rect
+          className="mark"
+          key={yAccessor(d)}
+          x={0}
+          y={yMapping(yAccessor(d))}
+          width={xMapping(xAccessor(d))}
+          height={yMapping.bandwidth()}
+        >
+          {/* <title>{xValue(d)}</title> */}
+        </rect>
+    )))
 
   return (
     <div className="histogram">
-      <svg
-        width={displayWidth}
-        height={displayHeight}
-      >
-        <g transform={`translate(${diagramSpace.left}, ${diagramSpace.top})`}><XAxisChannel />
-        <YAxisChannel /></g>
-        
+      <svg width={displayWidth} height={displayHeight}>
+        <g transform={`translate(${diagramSpace.left}, ${diagramSpace.top})`}>
+          <XAxisChannel xMapping={xMapping} drawHeight={drawHeight} />
+          <YAxisChannel yMapping={yMapping}/>
+          <Marks />
+        </g>
       </svg>
     </div>
   );
