@@ -1,11 +1,11 @@
-export const YAxisChannel = ({ yMapping, domainValueSplitIndex=30, textOffset=-3 }) =>
+export const YAxisChannel = ({ yMapping, domainValueSplitIndex=30, textOffset=-10 }) =>
   yMapping.domain().map((domainValue) => (
-    <g transform={`translate(${textOffset}, 0)`}>
-      <text y={yMapping(domainValue)} textAnchor="end">
-        <tspan class="text" x="0" dx="0" dy="0">
+    <g className="tick-group" transform={`translate(${textOffset}, 0)`}>
+      <text y={yMapping(domainValue) + yMapping.bandwidth() / 2} textAnchor="end">
+        <tspan  x="0" dx="0" dy="0">
           {domainValue.substring(0,domainValueSplitIndex)}
         </tspan>
-        <tspan class="text" x="0" dx="0" dy="16">
+        <tspan  x="0" dx="0" dy="16">
           {domainValue.substring(domainValueSplitIndex)}
         </tspan>
       </text>
