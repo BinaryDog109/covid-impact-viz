@@ -19,3 +19,25 @@ select ?industryGroup ?resposeNum ?continue ?temPause where {
                 OPTIONAL {?industryGroup cw1:respondSurveyNum ?resposeNum;}
     			
 }
+
+===============================
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select * where { 
+	?Industry a cw1:SingleIndustry .
+    ?Industry ?predicate ?num.
+    filter contains(str(?predicate), "apply"). 			
+}
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select * where { 
+	?Industry a cw1:SingleIndustry .
+    ?Industry ?predicate ?num.
+    filter contains(str(?predicate), "receive"). 			
+}
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select * where { 
+	?Industry a cw1:SingleIndustry .
+    ?Industry ?predicate ?num.
+    filter contains(str(?predicate), "intend"). 			
+}

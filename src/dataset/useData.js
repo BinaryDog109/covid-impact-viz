@@ -13,12 +13,11 @@ export const useData = () => {
   });
   useEffect(() => {
     async function fetchData() {
-      const industryTradingStatusData = await csv(industryTradingStatusDataCsvUrl);
+      const industryTradingStatusData = await csv(
+        industryTradingStatusDataCsvUrl
+      );
       industryTradingStatusData.ontURI = ontURI;
-      setData((prevState) => ({...prevState, industryTradingStatusData}));
-      
-      
-
+      setData((prevState) => ({ ...prevState, industryTradingStatusData }));
     }
     fetchData();
   }, []);
