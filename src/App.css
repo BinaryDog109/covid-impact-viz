@@ -40,22 +40,17 @@
 .tick-group line {
   stroke: #EFECEA;
 }
-.tick-group text {
+.tick-group text, .axis-label {
   fill: #8E8883;
-}
-
-.mark .mark-subset1 {
-  fill: #F2DA57;
-}
-.mark .mark-subset2 {
-  fill: #F6B656;
-}
-.mark .mark-subset3 {
-  fill: #BA5F06; 
 }
 
 .main-shape text {
   fill: #635F5D;
+}
+
+.histogram .title {
+  font-size: 2.2em;
+  padding-left: 22px;
 }
 
 svg {

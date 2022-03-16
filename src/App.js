@@ -11,14 +11,14 @@ import { ColorLegend } from "./components/ColorLegend";
 import { useState } from "react";
 
 const diagramSpace = {
-  top: 200,
+  top: 22,
   left: 350,
-  bottom: 90,
+  bottom: 200,
   right: 300,
 };
 
 const displayWidth = window.innerWidth;
-const displayHeight = window.innerHeight;
+const displayHeight = window.innerHeight - 50;
 const drawHeight = displayHeight - diagramSpace.top - diagramSpace.bottom;
 const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
@@ -53,6 +53,9 @@ function App() {
 
   return (
     <div className="histogram">
+      <div className="title">
+        What is the trading status among the respondents?
+      </div>
       <svg width={displayWidth} height={displayHeight}>
         <g transform={`translate(${diagramSpace.left}, ${diagramSpace.top})`}>
           <XAxisChannel xMapping={xMapping} drawHeight={drawHeight} />
@@ -76,7 +79,7 @@ function App() {
             colorMapping={colorMapping}
             mustDisplay={hoverLegend ? false : true}
           />
-
+          <text className="axis-label" textAnchor="middle" x={drawWidth/2} y={drawHeight} fontSize={30} dy={60}>Number of Responses</text>
           <ColorLegend
             hoverLegend={hoverLegend}
             handleHover={setHoverLegend}
