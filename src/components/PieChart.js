@@ -1,7 +1,13 @@
 import { pie, arc, csv } from "d3";
 import { useEffect, useState } from "react";
+import "react-dropdown/style.css";
 
-export const PieChart = ({ diagramSpace, drawWidth, colorMapping }) => {
+export const PieChart = ({
+  selected,
+  diagramSpace,
+  drawWidth,
+  colorMapping,
+}) => {
   const industryGroupTradingStatusCsvUrl =
     "./sparql/Industry groups response and trading status.csv";
   const ontURI =
@@ -24,6 +30,7 @@ export const PieChart = ({ diagramSpace, drawWidth, colorMapping }) => {
   }, []);
   const continuePercentageAccessor = (record) => record.continue;
   const temPausePercentageAccessor = (record) => record.temPause;
+
   if (!data)
     return (
       <g
@@ -47,16 +54,24 @@ export const PieChart = ({ diagramSpace, drawWidth, colorMapping }) => {
   }, []);
   console.log(colorValueArray);
 
-  const test = [1, 1, 2, 3, 5, 8, 13, 21];
-  const arcsData = pie()(colorValueArray[0].values);
+  const arcsData = pie()(colorValueArray[selected].values);
   return arcsData.map((arc, index) => {
+    const pathString = arcGenerator(arc);
+    const percentage = (colorValueArray[selected].values[index] * 100).toFixed(2)
     return (
-      <g
+      <g className="main-shape"
         transform={`translate(${drawWidth + pieRadius + 5}, ${
           pieRadius * 2.5
         })`}
       >
-        <path fill={colorValueArray[0].colors[index]} d={arcGenerator(arc)} />
+        <path
+          className="piePath"
+          fill={colorValueArray[selected].colors[index]}
+          d={pathString}
+        />
+        <text fontSize={`0.7em`} textAnchor="middle" transform={`translate(${arcGenerator.centroid(arc)})`}>
+            {`${percentage}%`}
+        </text>
       </g>
     );
   });

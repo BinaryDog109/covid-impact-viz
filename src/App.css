@@ -56,3 +56,8 @@
 svg {
   vertical-align: top;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
