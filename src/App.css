@@ -51,7 +51,11 @@
   fill: #F6B656;
 }
 .mark .mark-subset3 {
-  fill: #E25A42; 
+  fill: #BA5F06; 
+}
+
+.main-shape text {
+  fill: #635F5D;
 }
 
 svg {

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 import { scaleBand, scaleLinear, scaleOrdinal, max } from "d3";
@@ -8,15 +7,15 @@ import { useData } from "./useData";
 import { XAxisChannel } from "./components/XAxisChannel";
 import { YAxisChannel } from "./components/YAxisChannel";
 import { Marks } from "./components/Marks";
+import { ColorLegend } from "./components/ColorLegend";
+import { useState } from "react";
 
 const diagramSpace = {
-  top: 35,
+  top: 200,
   left: 350,
   bottom: 90,
-  right: 150,
+  right: 300,
 };
-const outsideMargin = 20;
-const textOffset = 50;
 
 const displayWidth = window.innerWidth;
 const displayHeight = window.innerHeight;
@@ -25,10 +24,10 @@ const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
 function App() {
   const data = useData();
+  const [hoverLegend, setHoverLegend] = useState(null);
   if (!data) return <h1 className="no-data-title">Loading data...</h1>;
   // x axis: response number
   // y axis: industry name
-  console.log(data);
 
   const xAccessor = (elem) => +elem.responseNum;
   xAccessor.Continue = (elem) => Math.round(+elem.continue * +elem.responseNum);
@@ -49,27 +48,8 @@ function App() {
     .paddingInner(0.45);
 
   const colorMapping = scaleOrdinal()
-    .domain(["Continue to Trade", "Temporarily Pause", "Permantly Stop"])
-    .range(["#F2DA57", "#F6B656", "#E25A42"]);
-
-
-    const handleMouseEnter = () => {
-      console.log("mouse in")
-    }
-  const ColorLegend = ({ legendOffset = 30, legendWidth = 10 }) => (
-    <g onMouseEnter={handleMouseEnter} transform={`translate(${drawWidth + 5}, 0)`}>
-      {colorMapping.domain().map((domainValue, index) => (
-        <g transform={`translate(0, ${legendOffset * index})`}>
-          <rect
-            fill={colorMapping(domainValue)}
-            width={legendWidth}
-            height={legendWidth}
-          />
-          <text x={legendWidth + 5} dy={legendWidth}>{domainValue}</text>
-        </g>
-      ))}
-    </g>
-  );
+    .domain(["Continue to Trade", "Temporarily Pause", "Permanently Stop"])
+    .range(["#F2DA57", "#F6B656", "#C1BAA9"]);
 
   return (
     <div className="histogram">
@@ -83,8 +63,26 @@ function App() {
             yMapping={yMapping}
             xAccessor={xAccessor}
             yAccessor={yAccessor}
+            hoverLegend={hoverLegend}
+            colorMapping={colorMapping}
           />
-          <ColorLegend />
+          <Marks
+            data={data}
+            xMapping={xMapping}
+            yMapping={yMapping}
+            xAccessor={xAccessor}
+            yAccessor={yAccessor}
+            hoverLegend={hoverLegend}
+            colorMapping={colorMapping}
+            mustDisplay={hoverLegend ? false : true}
+          />
+
+          <ColorLegend
+            hoverLegend={hoverLegend}
+            handleHover={setHoverLegend}
+            colorMapping={colorMapping}
+            drawWidth={drawWidth}
+          />
         </g>
       </svg>
     </div>
