@@ -12,6 +12,7 @@ export const HistogramRect = ({
   mustDisplay = false,
 }) => {
   const [color1, color2, color3] = colorMapping.range();
+  const recordResponses = xAccessor(record)
   const yPosition = yMapping(yAccessor(record));
   const yHeight = yMapping.bandwidth();
   const xDistanceForContinueTrading = xMapping(xAccessor.Continue(record));
@@ -32,17 +33,17 @@ export const HistogramRect = ({
         height={yHeight}
         fill={color1}
       >
-        <title>{`Continue to trade: ${xAccessor.Continue(record)}`}</title>
+        <title>{`Continue to trade: ${xAccessor.Continue(record)} (${+record.continue * 100}%)`}</title>
       </rect>
       <text
         visibility={hoverOpacityJudgeForText(color1)?"visible":"hidden"}
-        textAnchor="middle"
+        textAnchor="start"
         className="text-continue-to-trade-number"
         x={xDistanceForContinueTrading / 2}
         y={yPosition + yHeight / 2}
         dy="0.32em"
       >
-        {xAccessor.Continue(record)}
+        {`${xAccessor.Continue(record)} responses`}
       </text>
 
       <rect
@@ -53,7 +54,7 @@ export const HistogramRect = ({
         height={yHeight}
         fill={color2}
       >
-        <title>{`Temporarily paused: ${xAccessor.TemPause(record)}`}</title>
+        <title>{`Temporarily paused: ${xAccessor.TemPause(record)} (${+record.temPause * 100}%)`}</title>
       </rect>
       <text
         visibility={hoverOpacityJudgeForText(color2)?"visible":"hidden"}
@@ -63,7 +64,7 @@ export const HistogramRect = ({
         y={yPosition + yHeight / 2}
         dy="0.32em"
       >
-        {xAccessor.TemPause(record)}
+        {`${xAccessor.TemPause(record)} responses`}
       </text>
 
       <rect
@@ -76,7 +77,7 @@ export const HistogramRect = ({
       >
         <title>{`Permanently ceased trading: ${xAccessor.PermantStop(
           record
-        )}`}</title>
+        )} (${ (((1 - (+record.continue) - (+record.temPause))) * 100).toFixed(2)}%)`}</title>
       </rect>
       <text
         visibility={hoverOpacityJudgeForText(color3)?"visible":"hidden"}
@@ -90,7 +91,7 @@ export const HistogramRect = ({
         y={yPosition + yHeight / 2}
         dy="0.32em"
       >
-        {xAccessor.PermantStop(record)}
+        {`${xAccessor.PermantStop(record)} responses`}
       </text>
     </g>
   );
