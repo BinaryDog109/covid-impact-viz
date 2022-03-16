@@ -1,20 +1,20 @@
 import "./App.css";
 
-import { scaleBand, scaleLinear, scaleOrdinal, max } from "d3";
-
-import { useData } from "./useData";
+import {  scaleBand, scaleLinear, scaleOrdinal, max } from "d3";
+import { useData } from "./dataset/useData";
 
 import { XAxisChannel } from "./components/XAxisChannel";
 import { YAxisChannel } from "./components/YAxisChannel";
 import { Marks } from "./components/Marks";
 import { ColorLegend } from "./components/ColorLegend";
+import { PieChart } from "./components/PieChart";
 import { useState } from "react";
 
 const diagramSpace = {
   top: 22,
   left: 350,
-  bottom: 200,
-  right: 300,
+  bottom: 150,
+  right: 200,
 };
 
 const displayWidth = window.innerWidth;
@@ -23,12 +23,13 @@ const drawHeight = displayHeight - diagramSpace.top - diagramSpace.bottom;
 const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
 function App() {
-  const data = useData();
+  const data = useData().industryTradingStatusData
   const [hoverLegend, setHoverLegend] = useState(null);
+
   if (!data) return <h1 className="no-data-title">Loading data...</h1>;
+
   // x axis: response number
   // y axis: industry name
-
   const xAccessor = (elem) => +elem.responseNum;
   xAccessor.Continue = (elem) => Math.round(+elem.continue * +elem.responseNum);
   xAccessor.TemPause = (elem) => Math.round(+elem.temPause * +elem.responseNum);
@@ -50,6 +51,8 @@ function App() {
   const colorMapping = scaleOrdinal()
     .domain(["Continue to Trade", "Temporarily Pause", "Permanently Stop"])
     .range(["#F2DA57", "#F6B656", "#C1BAA9"]);
+
+  
 
   return (
     <div className="histogram">
@@ -79,13 +82,23 @@ function App() {
             colorMapping={colorMapping}
             mustDisplay={hoverLegend ? false : true}
           />
-          <text className="axis-label" textAnchor="middle" x={drawWidth/2} y={drawHeight} fontSize={30} dy={60}>Number of Responses</text>
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            x={drawWidth / 2}
+            y={drawHeight}
+            fontSize={30}
+            dy={60}
+          >
+            Number of Responses
+          </text>
           <ColorLegend
             hoverLegend={hoverLegend}
             handleHover={setHoverLegend}
             colorMapping={colorMapping}
             drawWidth={drawWidth}
           />
+          <PieChart xAccessor={xAccessor} colorMapping={colorMapping} diagramSpace={diagramSpace} drawWidth={drawWidth} />
         </g>
       </svg>
     </div>

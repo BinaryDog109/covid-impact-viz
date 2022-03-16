@@ -7,3 +7,15 @@ where {
       		cw1:continuePercentage ?continue;
         	cw1:temporaryPausePercentage ?temPause.
 }
+
+
+==============================
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?industryGroup ?resposeNum ?continue ?temPause where { 
+	?industryGroup a cw1:IndustryGroup ;
+                cw1:continuePercentage ?continue;
+        	cw1:temporaryPausePercentage ?temPause.
+                OPTIONAL {?industryGroup cw1:respondSurveyNum ?resposeNum;}
+    			
+}
