@@ -116,10 +116,32 @@ export const GovernmentSchemaScatterPlot = ({
           />
           <ColorLegend
             textYOffset={10}
-            offset={-drawWidth - diagramSpace.left}
+            offset={-drawWidth - diagramSpace.left-20}
             drawWidth={drawWidth}
             colorMapping={colorMapping}
+            useCircle
           />
+          
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            x={drawWidth / 2}
+            y={drawHeight}
+            fontSize={30}
+            dy={60}
+          >
+            Initialtive Apply Rates
+          </text>
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            
+            fontSize={30}
+            dy={0}
+            transform={`translate(${-60}, ${drawHeight/2}) rotate(-90)`}
+          >
+            Initialtive Receive Rates
+          </text>
         </g>
       </svg>
     </div>

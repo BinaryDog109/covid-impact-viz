@@ -7,6 +7,8 @@ export const ColorLegend = ({
   offset = 5,
   domainValueSplitIndex = 30,
   textYOffset = 10,
+  opacity = 0.5,
+  useCircle = false,
   handleHover = () => console.log("Hovered"),
 }) => (
   <g className="main-shape" transform={`translate(${drawWidth + offset}, 0)`}>
@@ -19,11 +21,22 @@ export const ColorLegend = ({
         cursor={"pointer"}
         transform={`translate(0, ${legendOffset * index})`}
       >
-        <rect
-          fill={colorMapping(domainValue)}
-          width={legendWidth}
-          height={legendWidth}
-        />
+        {useCircle ? (
+          <circle
+            fill={colorMapping(domainValue)}
+            r={legendWidth / 2}
+            cy="0.32em"
+            cx="5"
+            opacity={opacity}
+          ></circle>
+        ) : (
+          <rect
+            fill={colorMapping(domainValue)}
+            width={legendWidth}
+            height={legendWidth}
+          />
+        )}
+
         <g transform={`translate(${legendWidth + 5}, ${legendWidth})`}>
           <text>
             <tspan x="0" dx="0" dy="0">
