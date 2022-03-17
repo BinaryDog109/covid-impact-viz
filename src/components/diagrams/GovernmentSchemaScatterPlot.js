@@ -2,6 +2,7 @@ import { useGovernmentSchemeData } from "../../dataset/useGovermentSchemeData";
 import { scaleLinear, scaleOrdinal, max } from "d3";
 import { XAxisChannel } from "../XAxisChannel";
 import { YAxisLinearChannel } from "../YAxisLinearChannel";
+import { ColorLegend } from "../ColorLegend";
 
 export const GovernmentSchemaScatterPlot = ({
   displayWidth,
@@ -66,7 +67,8 @@ export const GovernmentSchemaScatterPlot = ({
         cx={xMapping(xAccessor(record))}
         cy={yMapping(yAccessor(record))}
         fill={colorMapping(colorDomainAccessor(record))}
-        r={sizeAccessor(record)}
+        r={sizeAccessor(record) * 2}
+        opacity={(sizeAccessor(record) / 100) * 5}
       >
         <title>{colorDomainAccessor(record)}</title>
       </circle>
@@ -83,6 +85,7 @@ export const GovernmentSchemaScatterPlot = ({
           <XAxisChannel textOffset={22} displayPercentage={true} xMapping={xMapping} drawHeight={drawHeight} />
           <YAxisLinearChannel yMapping={yMapping} drawWidth={drawWidth} />
           <ScatterPlot data={selectedData} />
+          <ColorLegend offset={-drawWidth - diagramSpace.left} drawWidth={drawWidth} colorMapping={colorMapping} />
         </g>
       </svg>
     </div>

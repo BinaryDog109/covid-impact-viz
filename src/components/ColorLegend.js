@@ -3,10 +3,11 @@ export const ColorLegend = ({
   legendWidth = 10,
   drawWidth,
   colorMapping,
-  hoverLegend,
+  hoverLegend = null,
+  offset = 5,
   handleHover = () => console.log("Hovered"),
 }) => (
-  <g className="main-shape" transform={`translate(${drawWidth + 5}, 0)`}>
+  <g className="main-shape" transform={`translate(${drawWidth + offset}, 0)`}>
     {colorMapping.domain().map((domainValue, index) => (
       <g
         key={domainValue}
