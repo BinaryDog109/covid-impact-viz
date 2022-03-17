@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 import { csv } from "d3";
 
-const industryTradingStatusDataCsvUrl = "./sparql/query-result.csv";
+const governmentSchemeDataCsvUrl = "./sparql/government scheme.csv";
 
 const ontURI =
   "http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#";
 
-export const useData = () => {
+export const useGovernmentSchemeData = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     async function fetchData() {
-      const industryTradingStatusData = await csv(
-        industryTradingStatusDataCsvUrl
+      const governmentSchemeData = await csv(
+        governmentSchemeDataCsvUrl
       );
-      industryTradingStatusData.ontURI = ontURI;
-      setData(industryTradingStatusData);
+      governmentSchemeData.ontURI = ontURI;
+      setData(governmentSchemeData);
     }
     fetchData();
   }, []);

@@ -59,7 +59,7 @@ export const PieChart = ({
     const pathString = arcGenerator(arc);
     const percentage = (colorValueArray[selected].values[index] * 100).toFixed(2)
     return (
-      <g className="main-shape"
+      <g key={index} className="main-shape"
         transform={`translate(${drawWidth + pieRadius + 5}, ${
           pieRadius * 2.5
         })`}

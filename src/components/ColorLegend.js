@@ -9,6 +9,7 @@ export const ColorLegend = ({
   <g className="main-shape" transform={`translate(${drawWidth + 5}, 0)`}>
     {colorMapping.domain().map((domainValue, index) => (
       <g
+        key={domainValue}
         opacity={hoverLegend && domainValue !== hoverLegend? 0.2:1}
         onMouseEnter={() => handleHover(domainValue)}
         onMouseLeave={()=>handleHover(null)}
