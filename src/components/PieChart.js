@@ -52,7 +52,6 @@ export const PieChart = ({
     acc.push({ values, colors });
     return acc;
   }, []);
-  console.log(colorValueArray);
 
   const arcsData = pie()(colorValueArray[selected].values);
   return arcsData.map((arc, index) => {

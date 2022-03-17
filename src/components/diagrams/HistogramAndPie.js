@@ -1,13 +1,13 @@
-import { useData } from "../dataset/useData";
+import { useData } from "../../dataset/useData";
 import ReactDropdown from "react-dropdown";
 import { scaleBand, scaleLinear, scaleOrdinal, max } from "d3";
 
 
-import { XAxisChannel } from "./XAxisChannel";
-import { YAxisChannel } from "./YAxisChannel";
-import { Marks } from "./Marks";
-import { ColorLegend } from "./ColorLegend";
-import { PieChart } from "./PieChart";
+import { XAxisChannel } from "../XAxisChannel";
+import { YAxisChannel } from "../YAxisChannel";
+import { Marks } from "../Marks";
+import { ColorLegend } from "../ColorLegend";
+import { PieChart } from "../PieChart";
 import { useState } from "react";
 
 export const HistogramAndPie = ({

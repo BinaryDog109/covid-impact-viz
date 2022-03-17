@@ -38,7 +38,7 @@
 }
 
 .tick-group line {
-  stroke: #EFECEA;
+  stroke: #fff;
 }
 .tick-group text, .axis-label {
   fill: #8E8883;

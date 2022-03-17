@@ -1,7 +1,7 @@
 import "./App.css";
 
-
-import { HistogramAndPie } from "./components/HistogramAndPie";
+import { HistogramAndPie } from "./components/diagrams/HistogramAndPie";
+import { GovernmentSchemaScatterPlot } from "./components/diagrams/GovernmentSchemaScatterPlot";
 
 const diagramSpace = {
   top: 22,
@@ -16,7 +16,6 @@ const drawHeight = displayHeight - diagramSpace.top - diagramSpace.bottom;
 const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
 function App() {
-  
   return (
     <div className="container">
       <HistogramAndPie
@@ -26,18 +25,13 @@ function App() {
         drawHeight={drawHeight}
         drawWidth={drawWidth}
       />
-      
-      <div className="scatter-plot">
-        <div className="title">
-          What is the relationship between initialtive apply rate and receive
-          rate?
-        </div>
-        <svg width={displayWidth} height={displayHeight}>
-          <g transform={`translate(${diagramSpace.left}, ${diagramSpace.top})`}>
-            <text>123</text>
-          </g>
-        </svg>
-      </div>
+      <GovernmentSchemaScatterPlot
+        displayWidth={displayWidth}
+        displayHeight={displayHeight}
+        diagramSpace={diagramSpace}
+        drawHeight={drawHeight}
+        drawWidth={drawWidth}
+      />
     </div>
   );
 }

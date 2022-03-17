@@ -25,5 +25,61 @@ PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework
 select * where { 
 	?Industry a cw1:SingleIndustry .
     ?Industry ?predicate ?num.
-    filter (contains(str(?predicate), "apply") || contains(str(?predicate), "receive") || contains(str(?predicate), "intend")). 			
+    filter (contains(str(?predicate), "apply_")||contains(str(?predicate), "receive_")||contains(str(?predicate), "intend_")). 			
 }
+===============================
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_AccreditedFinanceagreements_Percentage ?applyValue;
+     	cw1:receive_AccreditedFinanceagreements_Percentage ?receiveValue;
+        cw1:intend_AccreditedFinanceagreements_Percentage ?intendValue.    
+} 
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_BusinessRatesholiday_Percentage ?applyValue;
+     	cw1:receive_BusinessRatesholiday_Percentage ?receiveValue;
+        cw1:intend_BusinessRatesholiday_Percentage ?intendValue.    
+} 
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_CoronavirusJobRetentionScheme_Percentage ?applyValue;
+     	cw1:receive_CoronavirusJobRetentionScheme_Percentage ?receiveValue;
+        cw1:intend_CoronavirusJobRetentionScheme_Percentage ?intendValue.    
+} 
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_DeferringVATpayments_Percentage ?applyValue;
+     	cw1:receive_DeferringVATpayments_Percentage ?receiveValue;
+        cw1:intend_DeferringVATpayments_Percentage ?intendValue.    
+} 
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage ?applyValue;
+     	cw1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage ?receiveValue;
+        cw1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage ?intendValue.    
+} 
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_HMRCTimeToPayscheme_Percentage ?applyValue;
+     	cw1:receive_HMRCTimeToPayscheme_Percentage ?receiveValue;
+        cw1:intend_HMRCTimeToPayscheme_Percentage ?intendValue.    
+} 
+
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select ?Industry ?applyValue ?receiveValue ?intendValue where { 
+	?Industry a cw1:SingleIndustry;
+    	cw1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage ?applyValue;
+     	cw1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage ?receiveValue;
+        cw1:intend_NoneOfTheabove_Percentage ?intendValue.    
+} 

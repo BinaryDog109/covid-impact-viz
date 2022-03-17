@@ -1,0 +1,13 @@
+Industry,applyValue,receiveValue,intendValue
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AccommodationAndFoodServiceActivities,0.422,0.306,0.137
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AdministrativeAndSupportServiceActivities,0.205,0.147,0.102
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ArtsEntertainmentAndRecreation,0.331,0.255,0.104
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Construction,0.287,0.234,0.096
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Education,0.07,0.057,0.022
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#HumanHealthAndSocialWorkActivities,0.063,0.042,0.056
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InformationAndCommunication,0.137,0.106,0.067
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Manufacturing,0.193,0.147,0.092
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ProfessionalScientificAndTechnicalActivities,0.186,0.146,0.083
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#TransportationAndStorage,0.248,0.188,0.078
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WaterSupplySewerageWasteManagementAndRemediationActivities,0.214,0.157,0.143
+http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles,0.25,0.183,0.076
