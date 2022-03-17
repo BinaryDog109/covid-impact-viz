@@ -61,12 +61,12 @@ export const HistogramAndPie = ({
           What is the trading status among the respondents?
         </div>
         <div
-          className="drop-down-container"
+          className="dropdown-container"
           style={{ marginRight: "10px", position: "relative", top: "320px" }}
         >
           <ReactDropdown
             options={attributes}
-            value={"0"}
+            value={selected}
             onChange={({ value }) => setSelected(value)}
           />
         </div>

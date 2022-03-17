@@ -1,8 +1,12 @@
 import { useGovernmentSchemeData } from "../../dataset/useGovermentSchemeData";
 import { scaleLinear, scaleOrdinal, max } from "d3";
+import { useState } from "react";
 import { XAxisChannel } from "../XAxisChannel";
 import { YAxisLinearChannel } from "../YAxisLinearChannel";
 import { ColorLegend } from "../ColorLegend";
+import { ScatterPlot } from "../ScatterPlot";
+import ReactDropdown from "react-dropdown";
+import { predicateTypes } from "../../dataset/predicateTypes";
 
 export const GovernmentSchemaScatterPlot = ({
   displayWidth,
@@ -12,32 +16,32 @@ export const GovernmentSchemaScatterPlot = ({
   drawWidth,
 }) => {
   const data = useGovernmentSchemeData();
-
+  const selectedInitialtiveString = "CoronavirusJobRetentionScheme";
+  const [option, setOption] = useState(selectedInitialtiveString);
   if (!data) return <h1>Loading...</h1>;
   console.log(data);
 
-  const selectedInitialtiveString = "CoronavirusJobRetentionScheme";
-  const selectedData = data[selectedInitialtiveString];
+  const selectedData = data[option];
   const getPredicateString = (verb, initialtive) =>
     `${verb}_${initialtive}_Percentage`;
   const xAccessor = (record) => {
     const value =
-      record[getPredicateString("apply", selectedInitialtiveString)];
+      record[getPredicateString("apply", option)];
     return value === "*" ? 0 : +value;
   };
   const yAccessor = (record) => {
     const value =
-      record[getPredicateString("receive", selectedInitialtiveString)];
+      record[getPredicateString("receive", option)];
     return value === "*" ? 0 : +value;
   };
   const colorDomainAccessor = (record) => record["Industry"];
   const sizeAccessor = (record) => {
     const value =
-      record[getPredicateString("intend", selectedInitialtiveString)];
-    return value === "*" ? 0 : (+value) * 30;
+      record[getPredicateString("intend", option)];
+    return value === "*" ? 0.005*60 : +value * 60;
   };
   const xMapping = scaleLinear()
-    .domain([0, max(selectedData, xAccessor)])
+    .domain([0, 1])
     .range([0, drawWidth])
     .nice();
   const yMapping = scaleLinear()
@@ -60,32 +64,62 @@ export const GovernmentSchemaScatterPlot = ({
       "#008080",
       "#e6beff",
     ]);
-    
-  const ScatterPlot = ({ data }) =>
-    data.map((record) => (
-      <circle
-        cx={xMapping(xAccessor(record))}
-        cy={yMapping(yAccessor(record))}
-        fill={colorMapping(colorDomainAccessor(record))}
-        r={sizeAccessor(record) * 2}
-        opacity={(sizeAccessor(record) / 100) * 5}
-      >
-        <title>{colorDomainAccessor(record)}</title>
-      </circle>
-    ));
-
+  const percentageFormatter = (d) => parseInt(d * 100);
+  const attributes = predicateTypes.map(predicate => ({
+    value: predicate,
+    label: `${predicate} Initialtive`
+  }))
   return (
     <div className="scatter-plot">
-      <div className="title">
-        What is the relationship between initialtive apply rate and receive
-        rate?
+      <div>
+        <div className="title">
+          What is the relationship between initialtive apply rate and receive
+          rate?
+        </div>
+        <div style={{width: '50%'}}>
+          <ReactDropdown
+            options={attributes}
+            value={option}
+            onChange={({ value }) => setOption(value)}
+          />
+        </div>
       </div>
       <svg width={displayWidth} height={displayHeight}>
-        <g transform={`translate(${diagramSpace.left}, ${diagramSpace.top})`}>
-          <XAxisChannel textOffset={22} displayPercentage={true} xMapping={xMapping} drawHeight={drawHeight} />
-          <YAxisLinearChannel yMapping={yMapping} drawWidth={drawWidth} />
-          <ScatterPlot data={selectedData} />
-          <ColorLegend offset={-drawWidth - diagramSpace.left} drawWidth={drawWidth} colorMapping={colorMapping} />
+        <g
+          transform={`translate(${diagramSpace.left + 50}, ${
+            diagramSpace.top
+          })`}
+        >
+          <XAxisChannel
+            formatter={percentageFormatter}
+            textOffset={22}
+            displayPercentage={true}
+            xMapping={xMapping}
+            drawHeight={drawHeight}
+          />
+          <YAxisLinearChannel
+            textOffset={22}
+            formatter={percentageFormatter}
+            displayPercentage={true}
+            yMapping={yMapping}
+            drawWidth={drawWidth}
+          />
+          <ScatterPlot
+            data={selectedData}
+            yMapping={yMapping}
+            xMapping={xMapping}
+            colorMapping={colorMapping}
+            colorDomainAccessor={colorDomainAccessor}
+            sizeAccessor={sizeAccessor}
+            xAccessor={xAccessor}
+            yAccessor={yAccessor}
+          />
+          <ColorLegend
+            textYOffset={10}
+            offset={-drawWidth - diagramSpace.left}
+            drawWidth={drawWidth}
+            colorMapping={colorMapping}
+          />
         </g>
       </svg>
     </div>

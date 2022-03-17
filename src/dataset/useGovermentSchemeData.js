@@ -1,23 +1,13 @@
 import { useState, useEffect } from "react";
 import { csv } from "d3";
 
+import { predicateTypes } from "./predicateTypes";
+
 const governmentSchemeDataCsvUrl = "./sparql/government scheme.csv";
 
 const ontURI =
   "http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#";
-const predicateTypes = [
-  "AccreditedFinanceagreements",
-  "BusinessRatesholiday",
-  "CoronavirusJobRetentionScheme",
-  "DeferringVATpayments",
-  "Government-fundedSmallBusinessGrantOrLoanschemes",
-  "HMRCTimeToPayscheme",
-];
-const negativePredicates = {
-  apply: "WeHaveNotAppliedForAnyOfTheseinitiatives",
-  receive: "WehaventReceivedAnyThatWeAppliedfor",
-  intend: "NoneOfTheabove",
-};
+
 export const useGovernmentSchemeData = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -33,8 +23,8 @@ export const useGovernmentSchemeData = () => {
       governmentSchemeData.ontURI = ontURI;
       // The obj stores like this: { InitialtiveName: [{},{},...] }
       const aggregated = predicateTypes.reduce((acc, type) => {
-        acc[type] = []
-        return acc
+        acc[type] = [];
+        return acc;
       }, {});
 
       // Transform from {idProp:x, typeProp:y, valueProp:z} to {idProp:x, y:z}
@@ -70,10 +60,10 @@ export const useGovernmentSchemeData = () => {
 
         // Here I transform elements of the same Industry in the filteredArray to be in the shape of the merge function result
         // So that each elem becomes like this:
-          // Industry: "AccommodationAndFoodServiceActivities"
-          // apply_BusinessRatesholiday_Percentage: "0.782"
-          // intend_BusinessRatesholiday_Percentage: "0.18"
-          // receive_BusinessRatesholiday_Percentage: "0.633"
+        // Industry: "AccommodationAndFoodServiceActivities"
+        // apply_BusinessRatesholiday_Percentage: "0.782"
+        // intend_BusinessRatesholiday_Percentage: "0.18"
+        // receive_BusinessRatesholiday_Percentage: "0.633"
 
         const categorisedArray = [];
         let merge = null;

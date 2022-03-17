@@ -1,4 +1,4 @@
-export const YAxisLinearChannel = ({ yMapping, drawWidth, textOffset = 15 }) =>
+export const YAxisLinearChannel = ({ yMapping, drawWidth, textOffset = 15, formatter=tickValue=>tickValue, displayPercentage = false }) =>
   yMapping.ticks().map((tickValue) => (
     <g
       className="tick-group"
@@ -7,7 +7,7 @@ export const YAxisLinearChannel = ({ yMapping, drawWidth, textOffset = 15 }) =>
     >
       <line x2={drawWidth} />
       <text textAnchor="middle" dy={"0.32em"} x={-textOffset}>
-        {`${parseInt(tickValue * 100)}%`}
+        {`${formatter(tickValue)}${displayPercentage? '%':''}`}
       </text>
     </g>
   ));
