@@ -1,4 +1,4 @@
-export const XAxisChannel = ({ xMapping, drawHeight, textOffset = 15 }) =>
+export const XAxisChannel = ({ xMapping, drawHeight, textOffset = 15, displayPercentage = false }) =>
   xMapping.ticks().map((tickValue) => (
     <g
       className="tick-group"
@@ -7,7 +7,7 @@ export const XAxisChannel = ({ xMapping, drawHeight, textOffset = 15 }) =>
     >
       <line y2={drawHeight} />
       <text textAnchor="middle" y={drawHeight + textOffset}>
-        {tickValue}
+        {displayPercentage? `${parseInt(tickValue * 100)}%` : tickValue}
       </text>
     </g>
   ));
