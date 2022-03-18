@@ -7,6 +7,7 @@ import {
   scaleThreshold,
   min,
 } from "d3";
+import { ColorLegend } from "../ColorLegend";
 
 export const Map = ({
   displayWidth,
@@ -30,14 +31,27 @@ export const Map = ({
   });
 
   const projection = geoNaturalEarth1().fitSize(
-    [drawWidth, drawHeight],
+    [drawHeight, drawHeight],
     featureCollection
   );
 
   const path = geoPath(projection);
 
-  const elemNum = areas.length;
-  const continuAccessor = (data) => data.continue;
+  const continueAccessor = (record) => +record.continue;
+  const countryNameAccessor = (record) => record.CountryArea;
+  const temPauseAccessor = (record) => record.temPause;
+  const permantStopAccessor = (elem) =>
+    1 - permantStopAccessor(elem) - temPauseAccessor(elem);
+  const AccreditedFinanceagreementsAccesor = (record) =>
+    +record.AccreditedFinanceagreements;
+  const BusinessRatesholidayAccesor = (record) => +record.BusinessRatesholiday;
+  const CoronavirusJobRetentionSchemeAccesor = (record) =>
+    +record.CoronavirusJobRetentionScheme;
+  const DeferringVATpaymentsAccesor = (record) => +record.DeferringVATpayments;
+  const GovernmentFundedSmallBusinessGrantOrLoanschemesAccesor = (record) =>
+    +record.GovernmentFundedSmallBusinessGrantOrLoanschemes;
+  const HMRCTimeToPayschemeAccesor = (record) => +record.HMRCTimeToPayscheme;
+
   const getScaleThreshold = (
     data,
     accessor = (d) => d,
@@ -52,6 +66,19 @@ export const Map = ({
     return scaleThreshold().domain(thresholds).range(schemeOranges[elemNum]);
   };
 
+  const getThresholdMapping = (data, accessor) => getScaleThreshold(data, accessor);
+  const thresholdMapping = getThresholdMapping(
+    countryAreaData,
+    continueAccessor
+  )
+  // Convert from threshold mapping to color mapping
+  const colorMapping = {}
+  colorMapping.domain = () => {
+
+    const domain = [...thresholdMapping.domain()]
+    domain.map()
+  }
+  colorMapping.range = () => [...thresholdMapping.range()]
   return (
     <div>
       <div className="map">
@@ -60,20 +87,31 @@ export const Map = ({
           areas?
         </div>
         <svg width={displayWidth} height={displayHeight}>
-          <g className="map-mark" transform={`scale(1.3)`}>
-            {areas.map((area) => { 
-              const mapName = area.mapName
-              const areaData = countryAreaData.find()
+          <g className="map-mark" transform={`scale(1.4)`}>
+            <ColorLegend  />
+            {areas.map((area) => {
+              // area is a geojson object, while record is retrieved from the d3.csv data
+              const mapName = area.mapName;
+              const record = countryAreaData.find(
+                (elem) => countryNameAccessor(elem) === mapName
+              );
+              // Find the center of each area
+              const [textX, textY] = (path.centroid(area))
+
               return (
-              <g
-                // fill={getScaleThreshold(countryAreaData, continuAccessor)()}
-                className={area.mapName}
-              >
-                {area.features.map((feature) => (
-                  <path className="feature" d={path(feature)} />
-                ))}
-              </g>
-            )})}
+                <g key={area.mapName} className={`${area.mapName} map-area`}>
+                  {area.features.map((feature) => { 
+                    return (
+                    <path
+                      fill={thresholdMapping(continueAccessor(record))}
+                      className="feature"
+                      d={path(feature)}
+                    />
+                  )})}
+                  <text textAnchor="middle" x={textX} y={textY}>{area.mapName}:{(continueAccessor(record) * 100).toFixed(2)}%</text>
+                </g>
+              );
+            })}
           </g>
         </svg>
       </div>
