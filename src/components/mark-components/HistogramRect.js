@@ -21,7 +21,7 @@ export const HistogramRect = ({
   const hoverOpacityJudgeForText = (color) =>
     hoverLegend && colorMapping(hoverLegend) === color ? 1 : 0;
   const hoverOpacityJudgeForRectangles = (color) =>
-    mustDisplay || hoverOpacityJudgeForText(color) ? 1 : 0.2;
+    hoverLegend && colorMapping(hoverLegend) !== color? 0.2 : 1;
 
   return (
     <g className="main-shape">

@@ -2,7 +2,6 @@ import { useData } from "../../dataset/useData";
 import ReactDropdown from "react-dropdown";
 import { scaleBand, scaleLinear, scaleOrdinal, max } from "d3";
 
-
 import { XAxisChannel } from "../XAxisChannel";
 import { YAxisChannel } from "../YAxisChannel";
 import { Marks } from "../Marks";
@@ -84,16 +83,7 @@ export const HistogramAndPie = ({
             hoverLegend={hoverLegend}
             colorMapping={colorMapping}
           />
-          <Marks
-            data={data}
-            xMapping={xMapping}
-            yMapping={yMapping}
-            xAccessor={xAccessor}
-            yAccessor={yAccessor}
-            hoverLegend={hoverLegend}
-            colorMapping={colorMapping}
-            mustDisplay={hoverLegend ? false : true}
-          />
+
           <text
             className="axis-label"
             textAnchor="middle"

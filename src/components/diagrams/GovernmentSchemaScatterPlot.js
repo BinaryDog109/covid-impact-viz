@@ -11,7 +11,8 @@ import { predicateTypes } from "../../dataset/predicateTypes";
 export const GovernmentSchemaScatterPlot = ({
   displayWidth,
   displayHeight,
-  diagramSpace,
+  translateLeft,
+  translateTop,
   drawHeight,
   drawWidth,
 }) => {
@@ -19,6 +20,7 @@ export const GovernmentSchemaScatterPlot = ({
   const selectedInitialtiveString = "CoronavirusJobRetentionScheme";
   const [option, setOption] = useState(selectedInitialtiveString);
   const [hoverLegend, setHoverLegend] = useState(null);
+  const [hoverCircle, setHoverCircle] = useState(null);
 
   if (!data) return <h1>Loading...</h1>;
 
@@ -68,6 +70,7 @@ export const GovernmentSchemaScatterPlot = ({
     value: predicate,
     label: `${predicate} Initialtive`,
   }));
+  const circleOpacity = 0.7
   return (
     <div>
       <div className="scatter-plot">
@@ -75,7 +78,7 @@ export const GovernmentSchemaScatterPlot = ({
           What is the relationship between initialtive apply rate and receive
           rate?
         </div>
-        <div style={{ width: "50%", paddingLeft: "22px" }}>
+        <div style={{ width: "60ch", paddingLeft: "22px" }}>
           <ReactDropdown
             options={attributes}
             value={option}
@@ -83,10 +86,10 @@ export const GovernmentSchemaScatterPlot = ({
           />
         </div>
       </div>
-      <svg width={displayWidth} height={displayHeight - 50}>
+      <svg width={displayWidth} height={displayHeight}>
         <g
-          transform={`translate(${diagramSpace.left + 50}, ${
-            diagramSpace.top
+          transform={`translate(${translateLeft}, ${
+            translateTop
           })`}
         >
           <XAxisChannel
@@ -114,15 +117,21 @@ export const GovernmentSchemaScatterPlot = ({
             yAccessor={yAccessor}
             intendRateAccessor={intendRateAccessor}
             hoverLegend={hoverLegend}
+            hoverCircle={hoverCircle}
+            handleHoverCircle={setHoverCircle}
             textOffset={25}
+            circleOpacity={circleOpacity}
           />
           <ColorLegend
             textYOffset={10}
-            offset={-drawWidth - diagramSpace.left - 20}
-            drawWidth={drawWidth}
+            offset={20}
+            drawWidth={-translateLeft}
             colorMapping={colorMapping}
             useCircle
             handleHover={setHoverLegend}
+            hoverLegend={hoverLegend}
+            hoverCircle={hoverCircle}
+            opacity={circleOpacity}
           />
 
           <text

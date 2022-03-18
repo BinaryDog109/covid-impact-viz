@@ -76,11 +76,13 @@ svg {
 }
 
 .transition-scale-on-legend, .scatter-plot:hover circle {
-  r: 150;
-  opacity: 1;
+  r: 250;
 }
 .transition-scale-text-on-legend, .scatter-plot:hover .text-group {
   visibility: visible;
   opacity: 1;
+}
+.no-opacity {
+  opacity: 0;
 }
 

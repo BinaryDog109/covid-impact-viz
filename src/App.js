@@ -25,10 +25,12 @@ function App() {
         drawHeight={drawHeight}
         drawWidth={drawWidth}
       />
+
       <GovernmentSchemaScatterPlot
         displayWidth={displayWidth}
-        displayHeight={displayHeight}
-        diagramSpace={diagramSpace}
+        displayHeight={displayHeight - 50}
+        translateLeft={diagramSpace.left + 50}
+        translateTop={diagramSpace.top + 25}
         drawHeight={drawHeight}
         drawWidth={drawWidth}
       />

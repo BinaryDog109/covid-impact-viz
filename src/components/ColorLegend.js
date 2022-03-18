@@ -9,13 +9,18 @@ export const ColorLegend = ({
   textYOffset = 10,
   opacity = 0.5,
   useCircle = false,
+  hoverCircle = null,
   handleHover = () => console.log("Hovered"),
 }) => (
-  <g className="main-shape" transform={`translate(${drawWidth + offset}, 0)`}>
+  <g className="color-legend main-shape" transform={`translate(${drawWidth + offset}, 0)`}>
     {colorMapping.domain().map((domainValue, index) => (
       <g
         key={domainValue}
-        opacity={hoverLegend && domainValue !== hoverLegend ? 0.2 : 1}
+        // Opacity for the rest of the text next to circle/rect
+        
+        opacity={(hoverLegend && domainValue !== hoverLegend) || (hoverCircle && hoverCircle !== domainValue) ?           
+           0.2 : 1
+          }
         onMouseEnter={() => handleHover(domainValue)}
         onMouseLeave={() => handleHover(null)}
         cursor={"pointer"}
