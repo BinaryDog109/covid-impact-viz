@@ -50,7 +50,6 @@ export const useGovernmentSchemeData = () => {
 
       for (let i = 0; i < predicateTypes.length; i++) {
         const type = predicateTypes[i];
-        const aggregatedObj = aggregated[type];
 
         // Filter elem of the same predicate type from the csv data
         // Each elem will look like: {Industry: "AccommodationAndFoodServiceActivities", num: "0.206" ,predicate: "apply_AccreditedFinanceagreements_Percentag}

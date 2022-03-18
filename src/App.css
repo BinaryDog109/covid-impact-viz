@@ -61,3 +61,26 @@ svg {
   display: flex;
   justify-content: space-between;
 }
+.text-group {
+  fill: #36383b;
+  font-size: 1.5rem;
+  visibility: hidden;
+  transform-origin: center;
+  opacity: 0;
+  transition: all 250ms;
+  cursor: default;
+}
+
+.scatter-plot circle {
+  transition: all 250ms;
+}
+
+.transition-scale-on-legend, .scatter-plot:hover circle {
+  r: 150;
+  opacity: 1;
+}
+.transition-scale-text-on-legend, .scatter-plot:hover .text-group {
+  visibility: visible;
+  opacity: 1;
+}
+

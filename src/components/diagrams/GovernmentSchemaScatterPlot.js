@@ -18,32 +18,31 @@ export const GovernmentSchemaScatterPlot = ({
   const data = useGovernmentSchemeData();
   const selectedInitialtiveString = "CoronavirusJobRetentionScheme";
   const [option, setOption] = useState(selectedInitialtiveString);
+  const [hoverLegend, setHoverLegend] = useState(null);
+
   if (!data) return <h1>Loading...</h1>;
-  console.log(data);
 
   const selectedData = data[option];
   const getPredicateString = (verb, initialtive) =>
     `${verb}_${initialtive}_Percentage`;
   const xAccessor = (record) => {
-    const value =
-      record[getPredicateString("apply", option)];
+    const value = record[getPredicateString("apply", option)];
     return value === "*" ? 0 : +value;
   };
   const yAccessor = (record) => {
-    const value =
-      record[getPredicateString("receive", option)];
+    const value = record[getPredicateString("receive", option)];
     return value === "*" ? 0 : +value;
   };
   const colorDomainAccessor = (record) => record["Industry"];
-  const sizeAccessor = (record) => {
-    const value =
-      record[getPredicateString("intend", option)];
-    return value === "*" ? 0.005*60 : +value * 60;
+  const intendRateAccessor = (record) => {
+    const value = record[getPredicateString("intend", option)];
+    return value === "*" ? value : +value;
   };
-  const xMapping = scaleLinear()
-    .domain([0, 1])
-    .range([0, drawWidth])
-    .nice();
+  const sizeAccessor = (record) => {
+    const value = record[getPredicateString("intend", option)];
+    return value === "*" ? 0.005 * 80 : +value * 80;
+  };
+  const xMapping = scaleLinear().domain([0, 1]).range([0, drawWidth]).nice();
   const yMapping = scaleLinear()
     .domain([0, max(selectedData, yAccessor)])
     .range([drawHeight, 0])
@@ -65,18 +64,18 @@ export const GovernmentSchemaScatterPlot = ({
       "#e6beff",
     ]);
   const percentageFormatter = (d) => parseInt(d * 100);
-  const attributes = predicateTypes.map(predicate => ({
+  const attributes = predicateTypes.map((predicate) => ({
     value: predicate,
-    label: `${predicate} Initialtive`
-  }))
+    label: `${predicate} Initialtive`,
+  }));
   return (
-    <div className="scatter-plot">
-      <div>
+    <div>
+      <div className="scatter-plot">
         <div className="title">
           What is the relationship between initialtive apply rate and receive
           rate?
         </div>
-        <div style={{width: '50%'}}>
+        <div style={{ width: "50%", paddingLeft: "22px" }}>
           <ReactDropdown
             options={attributes}
             value={option}
@@ -84,7 +83,7 @@ export const GovernmentSchemaScatterPlot = ({
           />
         </div>
       </div>
-      <svg width={displayWidth} height={displayHeight}>
+      <svg width={displayWidth} height={displayHeight - 50}>
         <g
           transform={`translate(${diagramSpace.left + 50}, ${
             diagramSpace.top
@@ -113,15 +112,19 @@ export const GovernmentSchemaScatterPlot = ({
             sizeAccessor={sizeAccessor}
             xAccessor={xAccessor}
             yAccessor={yAccessor}
+            intendRateAccessor={intendRateAccessor}
+            hoverLegend={hoverLegend}
+            textOffset={25}
           />
           <ColorLegend
             textYOffset={10}
-            offset={-drawWidth - diagramSpace.left-20}
+            offset={-drawWidth - diagramSpace.left - 20}
             drawWidth={drawWidth}
             colorMapping={colorMapping}
             useCircle
+            handleHover={setHoverLegend}
           />
-          
+
           <text
             className="axis-label"
             textAnchor="middle"
@@ -135,10 +138,9 @@ export const GovernmentSchemaScatterPlot = ({
           <text
             className="axis-label"
             textAnchor="middle"
-            
             fontSize={30}
             dy={0}
-            transform={`translate(${-60}, ${drawHeight/2}) rotate(-90)`}
+            transform={`translate(${-60}, ${drawHeight / 2}) rotate(-90)`}
           >
             Initialtive Receive Rates
           </text>
