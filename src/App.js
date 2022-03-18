@@ -2,6 +2,7 @@ import "./App.css";
 
 import { HistogramAndPie } from "./components/diagrams/HistogramAndPie";
 import { GovernmentSchemaScatterPlot } from "./components/diagrams/GovernmentSchemaScatterPlot";
+import { Map } from "./components/diagrams/Map";
 
 const diagramSpace = {
   top: 22,
@@ -33,6 +34,14 @@ function App() {
         translateTop={diagramSpace.top + 25}
         drawHeight={drawHeight}
         drawWidth={drawWidth - 100}
+      />
+      <Map
+        displayWidth={displayWidth}
+        displayHeight={displayHeight - 25}
+        translateLeft={diagramSpace.left}
+        translateTop={diagramSpace.top}
+        drawHeight={drawHeight}
+        drawWidth={drawWidth}
       />
     </div>
   );

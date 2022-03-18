@@ -1,3 +1,4 @@
+Histogram:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix cw1: <http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#> 
 select ?Industry ?responseNum ?continue ?temPause
@@ -10,7 +11,7 @@ where {
 
 
 ==============================
-
+Pie Chart:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select ?industryGroup ?resposeNum ?continue ?temPause where { 
 	?industryGroup a cw1:IndustryGroup ;
@@ -21,6 +22,7 @@ select ?industryGroup ?resposeNum ?continue ?temPause where {
 }
 
 ===============================
+Scatter Plot:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select * where { 
 	?Industry a cw1:SingleIndustry .
@@ -28,6 +30,22 @@ select * where {
     filter (contains(str(?predicate), "apply_")||contains(str(?predicate), "receive_")||contains(str(?predicate), "intend_")). 			
 }
 ===============================
+Map:
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select * where { 
+	?CountryArea a cw1:CountryArea ;
+        cw1:continuePercentage ?continue;
+        cw1:temporaryPausePercentage ?temPause;
+        cw1:apply_AccreditedFinanceagreements_Percentage ?AccreditedFinanceagreements;        			 
+        cw1:apply_BusinessRatesholiday_Percentage ?BusinessRatesholiday;
+        cw1:apply_CoronavirusJobRetentionScheme_Percentage ?CoronavirusJobRetentionScheme;
+        cw1:apply_DeferringVATpayments_Percentage ?DeferringVATpayments;
+        cw1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage ?GovernmentFundedSmallBusinessGrantOrLoanschemes;
+        cw1:apply_HMRCTimeToPayscheme_Percentage ?HMRCTimeToPayscheme;
+        cw1:apply_AccreditedFinanceagreements_Percentage ?AccreditedFinanceagreements;        
+}
+===============================
+Test:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select ?Industry ?applyValue ?receiveValue ?intendValue where { 
 	?Industry a cw1:SingleIndustry;
