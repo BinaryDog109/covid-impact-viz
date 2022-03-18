@@ -29,11 +29,11 @@ function App() {
 
       <GovernmentSchemaScatterPlot
         displayWidth={displayWidth}
-        displayHeight={displayHeight - 50}
+        displayHeight={displayHeight}
         translateLeft={diagramSpace.left + 80}
         translateTop={diagramSpace.top + 25}
         drawHeight={drawHeight}
-        drawWidth={drawWidth - 100}
+        drawWidth={drawWidth - 50}
       />
       <Map
         displayWidth={displayWidth}

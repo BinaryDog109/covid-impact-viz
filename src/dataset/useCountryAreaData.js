@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { csv, json } from "d3";
-import { feature } from 'topojson';
+import { feature } from "topojson";
 
 const CountryAreaDataCsvUrl = "./sparql/country-area.csv";
-const jsonUrlEngland = 'https://martinjc.github.io/UK-GeoJSON/json/eng/topo_eer.json'
-const jsonUrlWealsh = 'https://martinjc.github.io/UK-GeoJSON/json/wal/topo_eer.json'
+const jsonUrlEngland =
+  "https://martinjc.github.io/UK-GeoJSON/json/eng/topo_eer.json";
+const jsonUrlWales =
+  "https://martinjc.github.io/UK-GeoJSON/json/wal/topo_eer.json";
+const jsonScotland =
+  "https://martinjc.github.io/UK-GeoJSON/json/sco/topo_eer.json";
 
 const ontURI =
   "http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#";
@@ -12,21 +16,31 @@ const ontURI =
 export const useData = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const row = record => {
-      record.CountryArea = record.CountryArea.replace(ontURI, "")
-      return record
-    }
+    const row = (record) => {
+      record.CountryArea = record.CountryArea.replace(ontURI, "");
+      return record;
+    };
     async function fetchData() {
-      const countryAreaData = await csv(
-        CountryAreaDataCsvUrl, row
-      );
+      const countryAreaData = await csv(CountryAreaDataCsvUrl, row);
       countryAreaData.ontURI = ontURI;
-      const topology = await json(jsonUrlEngland)
-      const welshTopology = await json(jsonUrlWealsh)
-      console.log(welshTopology)
-      const { eer } = topology.objects
-      const eer2 = welshTopology.objects.eer
-      setData({countryAreaData, areas: [feature(topology, eer), feature(welshTopology, eer2)]});
+      const topology = await json(jsonUrlEngland);
+      topology.mapName = "England"
+      const walesTopology = await json(jsonUrlWales);
+      walesTopology.mapName = "Wales"
+      const scotlandTopology = await json(jsonScotland);
+      scotlandTopology.mapName = "Scotland"
+      // console.log(scotlandTopology);
+      const topologies = [topology, walesTopology, scotlandTopology];
+      const areas = topologies.map((topology) => {
+        const item = feature(topology, topology.objects.eer);
+        item.mapName = topology.mapName
+        return item
+      });
+
+      setData({
+        countryAreaData,
+        areas,
+      });
     }
     fetchData();
   }, []);

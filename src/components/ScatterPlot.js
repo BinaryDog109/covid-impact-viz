@@ -17,6 +17,12 @@ export const ScatterPlot = ({
   data.map((record) => {
     const xPosition = xMapping(xAccessor(record));
     const yPosition = yMapping(yAccessor(record));
+    const intendValue = record => {
+      const value = intendRateAccessor(record)
+      return value==='*'? "<1" : (value * 100).toFixed(
+        2
+      )
+    }
     return (
       <g
         className="scatter-plot"
@@ -53,9 +59,7 @@ export const ScatterPlot = ({
             fontWeight={600}
             x={xPosition}
             y={yPosition}
-          >{`${(intendRateAccessor(record) * 100).toFixed(
-            2
-          )}% of this industry intends to apply it`}</text>
+          >{`${(intendValue(record))}% of this industry intends to apply it`}</text>
           <text textAnchor="middle" x={xPosition} y={yPosition + textOffset}>
             {`${(xAccessor(record) * 100).toFixed(2)}% of this industry has applied for it`}
           </text>

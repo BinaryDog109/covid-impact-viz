@@ -45,10 +45,7 @@ export const GovernmentSchemaScatterPlot = ({
     return value === "*" ? 0.005 * 80 : +value * 80;
   };
   const xMapping = scaleLinear().domain([0, 1]).range([0, drawWidth]).nice();
-  const yMapping = scaleLinear()
-    .domain([0, 1])
-    .range([drawHeight, 0])
-    .nice();
+  const yMapping = scaleLinear().domain([0, 1]).range([drawHeight, 0]).nice();
   const colorMapping = scaleOrdinal()
     .domain(selectedData.map(colorDomainAccessor))
     .range([
@@ -70,7 +67,7 @@ export const GovernmentSchemaScatterPlot = ({
     value: predicate,
     label: `${predicate} Initialtive`,
   }));
-  const circleOpacity = 0.7
+  const circleOpacity = 0.7;
   return (
     <div>
       <div className="scatter-plot">
@@ -87,11 +84,26 @@ export const GovernmentSchemaScatterPlot = ({
         </div>
       </div>
       <svg width={displayWidth} height={displayHeight}>
-        <g
-          transform={`translate(${translateLeft}, ${
-            translateTop
-          })`}
-        >
+        <g transform={`translate(${translateLeft}, ${translateTop})`}>
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            x={drawWidth / 2}
+            y={drawHeight}
+            fontSize={30}
+            dy={60}
+          >
+            Initialtive Apply Rates
+          </text>
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            fontSize={30}
+            dy={0}
+            transform={`translate(${-60}, ${drawHeight / 2}) rotate(-90)`}
+          >
+            Initialtive Receive Rates
+          </text>
           <XAxisChannel
             formatter={percentageFormatter}
             textOffset={22}
@@ -133,26 +145,6 @@ export const GovernmentSchemaScatterPlot = ({
             hoverCircle={hoverCircle}
             opacity={circleOpacity}
           />
-
-          <text
-            className="axis-label"
-            textAnchor="middle"
-            x={drawWidth / 2}
-            y={drawHeight}
-            fontSize={30}
-            dy={60}
-          >
-            Initialtive Apply Rates
-          </text>
-          <text
-            className="axis-label"
-            textAnchor="middle"
-            fontSize={30}
-            dy={0}
-            transform={`translate(${-60}, ${drawHeight / 2}) rotate(-90)`}
-          >
-            Initialtive Receive Rates
-          </text>
         </g>
       </svg>
     </div>

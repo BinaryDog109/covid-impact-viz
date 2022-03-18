@@ -1,5 +1,12 @@
 import { useData } from "../../dataset/useCountryAreaData";
-import { geoAlbers, geoPath } from "d3";
+import {
+  geoNaturalEarth1,
+  geoPath,
+  schemeOranges,
+  extent,
+  scaleThreshold,
+  min,
+} from "d3";
 
 export const Map = ({
   displayWidth,
@@ -9,17 +16,42 @@ export const Map = ({
   drawHeight,
   drawWidth,
 }) => {
-  const projection = geoAlbers()
-    .center([0, 52.561928])
-    .rotate([-1.464854, 0])
-    .parallels([41, 44])
-    .translate([drawWidth / 2 + 300, drawHeight / 2])
-    .scale(6000); // scale factor
-  const path = geoPath(projection);
   const data = useData();
   if (!data) return <h1>Loading...</h1>;
   console.log(data);
+
   const { countryAreaData, areas } = data;
+  const featureCollection = {
+    type: "FeatureCollection",
+    features: [],
+  };
+  areas.forEach((area) => {
+    featureCollection.features.push(...area.features);
+  });
+
+  const projection = geoNaturalEarth1().fitSize(
+    [drawWidth, drawHeight],
+    featureCollection
+  );
+
+  const path = geoPath(projection);
+
+  const elemNum = areas.length;
+  const continuAccessor = (data) => data.continue;
+  const getScaleThreshold = (
+    data,
+    accessor = (d) => d,
+    elemNum = data.length
+  ) => {
+    const extentArray = extent(data, accessor);
+    const distance = Math.abs(extentArray[1] - extentArray[0]) / elemNum;
+    const thresholds = [];
+    for (let i = 1; i <= elemNum - 1; i++) {
+      thresholds.push(min(data, accessor) + distance * i);
+    }
+    return scaleThreshold().domain(thresholds).range(schemeOranges[elemNum]);
+  };
+
   return (
     <div>
       <div className="map">
@@ -28,13 +60,20 @@ export const Map = ({
           areas?
         </div>
         <svg width={displayWidth} height={displayHeight}>
-          <g className="map-mark">
-            {areas[0].features.map((feature) => (
-              <path className="feature" d={path(feature)} />
-            ))}
-            {areas[1].features.map((feature) => (
-              <path className="feature" d={path(feature)} />
-            ))}
+          <g className="map-mark" transform={`scale(1.3)`}>
+            {areas.map((area) => { 
+              const mapName = area.mapName
+              const areaData = countryAreaData.find()
+              return (
+              <g
+                // fill={getScaleThreshold(countryAreaData, continuAccessor)()}
+                className={area.mapName}
+              >
+                {area.features.map((feature) => (
+                  <path className="feature" d={path(feature)} />
+                ))}
+              </g>
+            )})}
           </g>
         </svg>
       </div>
