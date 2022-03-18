@@ -46,7 +46,7 @@ export const GovernmentSchemaScatterPlot = ({
   };
   const xMapping = scaleLinear().domain([0, 1]).range([0, drawWidth]).nice();
   const yMapping = scaleLinear()
-    .domain([0, max(selectedData, yAccessor)])
+    .domain([0, 1])
     .range([drawHeight, 0])
     .nice();
   const colorMapping = scaleOrdinal()

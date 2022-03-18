@@ -55,16 +55,16 @@ export const ScatterPlot = ({
             y={yPosition}
           >{`${(intendRateAccessor(record) * 100).toFixed(
             2
-          )}% intends to apply it`}</text>
+          )}% of this industry intends to apply it`}</text>
           <text textAnchor="middle" x={xPosition} y={yPosition + textOffset}>
-            {`${(xAccessor(record) * 100).toFixed(2)}% has applied for it`}
+            {`${(xAccessor(record) * 100).toFixed(2)}% of this industry has applied for it`}
           </text>
           <text
             textAnchor="middle"
             x={xPosition}
             y={yPosition + textOffset * 2}
           >
-            {`${(yAccessor(record) * 100).toFixed(2)}% has received it`}
+            {`${(yAccessor(record) * 100).toFixed(2)}% of this industry has received it`}
           </text>
         </g>
       </g>
