@@ -88,3 +88,13 @@ svg {
   opacity: 0;
 }
 
+.line-chart-mark circle {
+  transition: all 250ms;
+}
+.line-chart-mark path {
+  fill: none;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition: all 250ms;
+}

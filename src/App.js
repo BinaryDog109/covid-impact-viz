@@ -47,7 +47,7 @@ function App() {
       />
       <IndustryGroupLineChart
         displayWidth={displayWidth}
-        displayHeight={displayHeight}
+        displayHeight={displayHeight - 50}
         translateLeft={diagramSpace.left}
         translateTop={diagramSpace.top}
         drawHeight={drawHeight}

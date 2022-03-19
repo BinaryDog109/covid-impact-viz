@@ -1,8 +1,10 @@
-import { scaleLinear } from "d3";
-import { max } from "d3";
-import { scaleBand } from "d3";
+import { scaleBand, scaleLinear, scaleOrdinal } from "d3";
 import { useState } from "react";
+import ReactDropdown from "react-dropdown";
+import { predicateTypes } from "../../dataset/predicateTypes";
 import { useGovernmentSchemeData } from "../../dataset/useGovermentSchemeData";
+import { ColorLegend } from "../ColorLegend";
+import { LineChart } from "../LineChart";
 import { XAxisBandChannel } from "../XAxisBandChannel";
 import { XAxisChannel } from "../XAxisChannel";
 import { YAxisLinearChannel } from "../YAxisLinearChannel";
@@ -44,34 +46,63 @@ export const IndustryGroupLineChart = ({
     const value = record[getPredicateString("intend", selected)];
     return value === "*" ? value : +value;
   };
-  const xAccessor = applyAccessor;
+  const yAccessor = applyAccessor;
 
   const xMapping = scaleBand()
     .domain(groupedData.map(nameAccessor))
     .range([0, drawWidth]);
   const yMapping = scaleLinear().domain([0, 1]).range([drawHeight, 0]);
+  const yAccessors = { applyAccessor, receiveAccessor, intendAccessor };
+  const colorMapping = scaleOrdinal()
+    .domain(["applyAccessor", "receiveAccessor", "intendAccessor"])
+    .range(["#BD8F22", "#BA5F06", "#005D6E"]);
+
+  //   Attributes for the drop down menu
+  const attributes = predicateTypes.map((predicate) => ({
+    value: predicate,
+    label: `${predicate} Initialtive`,
+  }));
 
   return (
     <div className="line-chart">
       <div className="title">
         What is the Government Schemes status among diffenrent work force size?
       </div>
+      <div className="drop-down"  style={{ width: "30%", marginLeft: "auto", textAlign: "center" }}>
+        <ReactDropdown
+          options={attributes}
+          value={selected}
+          onChange={({ value }) => setSelected(value)}
+        />
+      </div>
       <svg width={displayWidth} height={displayHeight}>
         <g transform={`translate(${translateLeft}, ${translateTop})`}>
+          <YAxisLinearChannel
+            textOffset={30}
+            yMapping={yMapping}
+            drawWidth={drawWidth}
+            displayPercentage
+            formatter={(v) => v * 100}
+          />
           <g transform={`translate(${50}, 0)`}>
             <XAxisBandChannel
               textOffset={30}
               xMapping={xMapping}
               drawHeight={drawHeight}
             />
+            <LineChart
+              colorMapping={colorMapping}
+              yAccessors={yAccessors}
+              data={groupedData}
+              xAccessor={nameAccessor}
+              xMapping={xMapping}
+              yAccessor={yAccessor}
+              yMapping={yMapping}
+            />
           </g>
-          <YAxisLinearChannel
-            textOffset={30}
-            yMapping={yMapping}
-            drawWidth={drawWidth}
-            displayPercentage
-            formatter={v => v*100}
-          />
+          <g transform={`translate(${10}, ${50})`}>
+            <ColorLegend drawWidth={drawWidth} colorMapping={colorMapping} />
+          </g>
         </g>
       </svg>
     </div>
