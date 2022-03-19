@@ -19,7 +19,11 @@ export const IndustryGroupLineChart = ({
 }) => {
   const selectedInitialtiveString = "CoronavirusJobRetentionScheme";
   const [selected, setSelected] = useState(selectedInitialtiveString);
-  const [hover, setHover] = useState(null);
+  // Hover on legend
+  const [hover, setHover] = useState(null); 
+  // Hover on the line
+  const [hoverLine, sethoverLine] = useState(null); 
+
   const csvUrl = "./sparql/industry group initialtive.csv";
   const data = useGovernmentSchemeData(csvUrl, "IndustryGroup");
 
@@ -102,11 +106,32 @@ export const IndustryGroupLineChart = ({
               formatter={d=>(d*100).toFixed(2)}
               displayPercentage
               hoverLegend={hover}
+              hoverLine={hoverLine}
+              handleHoverLine={sethoverLine}
             />
           </g>
           <g transform={`translate(${10}, ${50})`}>
             <ColorLegend handleHover={setHover} hoverLegend={hover} deleteLegendText="Accessor" drawWidth={drawWidth} colorMapping={colorMapping} />
           </g>
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            x={drawWidth / 2}
+            y={drawHeight}
+            fontSize={30}
+            dy={60}
+          >
+            Industry Work Force Size
+          </text>
+          <text
+            className="axis-label"
+            textAnchor="middle"
+            fontSize={30}
+            dy={0}
+            transform={`translate(${-60}, ${drawHeight / 2}) rotate(-90)`}
+          >
+            Initialtive Rates
+          </text>
         </g>
       </svg>
     </div>

@@ -50,7 +50,7 @@ function App() {
         displayHeight={displayHeight - 50}
         translateLeft={diagramSpace.left}
         translateTop={diagramSpace.top}
-        drawHeight={drawHeight}
+        drawHeight={drawHeight - 50}
         drawWidth={drawWidth}
       />
     </div>

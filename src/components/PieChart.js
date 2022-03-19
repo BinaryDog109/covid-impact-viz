@@ -7,6 +7,8 @@ export const PieChart = ({
   diagramSpace,
   drawWidth,
   colorMapping,
+  hoverLegend,
+  legendLabels
 }) => {
   const industryGroupTradingStatusCsvUrl =
     "./sparql/Industry groups response and trading status.csv";
@@ -35,6 +37,7 @@ export const PieChart = ({
     return (
       <g
         transform={`translate(${drawWidth + pieRadius + 5}, ${pieRadius * 3})`}
+        
       >
         <text>Loading...</text>
       </g>
@@ -62,6 +65,7 @@ export const PieChart = ({
         transform={`translate(${drawWidth + pieRadius + 5}, ${
           pieRadius * 2.5
         })`}
+        opacity={hoverLegend && hoverLegend !== legendLabels[index]? 0 : 1}
       >
         <path
           className="piePath"

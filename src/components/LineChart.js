@@ -6,25 +6,31 @@ export const LineChart = ({
   xAccessor,
   yAccessors,
   colorMapping,
-  formatter = d=>d,
-  displayPercentage=false,
+  formatter = (d) => d,
+  displayPercentage = false,
   circleRadius = 10,
-  hoverLegend=null
+  hoverLegend = null,
+  hoverLine = null,
+  handleHoverLine = () => {},
 }) => (
-  <g className="line-chart-mark">
+  <g>
     {Object.keys(yAccessors).map((yAccessorName) => {
-        const yAccessor = yAccessors[yAccessorName]
-        const color = colorMapping(yAccessorName)
+      const yAccessor = yAccessors[yAccessorName];
+      const color = colorMapping(yAccessorName);
       return (
-        <g key={yAccessorName} className={
-            hoverLegend && hoverLegend === yAccessorName
-              ? "transition-scale-on-legend"
-              : hoverLegend
-              ? "no-opacity"
-              : null
-        }>
+        <g
+          key={yAccessorName}
+          className={
+            hoverLegend && hoverLegend !== yAccessorName
+              ? "no-opacity line-chart-mark"
+              : "line-chart-mark"
+          }
+          onMouseEnter={() => handleHoverLine(yAccessorName)}
+          onMouseLeave={() => handleHoverLine(null)}
+          opacity={hoverLine && hoverLine !== yAccessorName? 0 : 1}
+        >
           <path
-          stroke={color}
+            stroke={color}
             d={line()
               .curve(curveNatural)
               .x((record) => xMapping(xAccessor(record)))
@@ -33,17 +39,25 @@ export const LineChart = ({
           {data.map((record) => {
             const xPosition = xMapping(xAccessor(record));
             const yPosition = yMapping(yAccessor(record));
-            const yValue = formatter(yAccessor(record))
+            const yValue = formatter(yAccessor(record));
             return (
-              <g className="line-chart-circle-text" key={xAccessor(record)} transform={`translate(${xPosition}, ${yPosition})`}>
+              <g
+                className="line-chart-circle-text"
+                key={xAccessor(record)}
+                transform={`translate(${xPosition}, ${yPosition})`}
+              >
                 <circle fill={color} r={circleRadius}>
-                    <title>{ `${yValue}${displayPercentage?'%':''}`}</title>
+                  <title>{`${yValue}${displayPercentage ? "%" : ""}`}</title>
                 </circle>
-                <text className={
+                <text
+                  className={
                     hoverLegend && hoverLegend === yAccessorName
-                    ? "text-group transition-scale-text-on-legend"
-                    : "text-group"
-                } textAnchor="middle" dy={'-0.32em'}>{ `${yValue}${displayPercentage?'%':''}`}</text>
+                      ? "text-group transition-scale-text-on-legend"
+                      : "text-group"
+                  }
+                  textAnchor="middle"
+                  dy={"-0.32em"}
+                >{`${yValue}${displayPercentage ? "%" : ""}`}</text>
               </g>
             );
           })}

@@ -40,15 +40,16 @@
 .tick-group line {
   stroke: #fff;
 }
-.tick-group text, .axis-label {
-  fill: #8E8883;
+.tick-group text,
+.axis-label {
+  fill: #8e8883;
 }
 
 .main-shape text {
-  fill: #635F5D;
+  fill: #635f5d;
 }
 .map-mark text {
-  fill: #726d69
+  fill: #726d69;
 }
 .title {
   font-size: 2.2em;
@@ -77,10 +78,14 @@ svg {
   transition: all 250ms;
 }
 
-.transition-scale-on-legend, .scatter-plot:hover circle {
+.transition-scale-on-legend,
+.scatter-plot:hover circle {
   r: 250;
 }
-.transition-scale-text-on-legend, .scatter-plot:hover .text-group {
+
+.transition-scale-text-on-legend,
+.scatter-plot:hover .text-group,
+.line-chart-mark:hover .text-group {
   visibility: visible;
   opacity: 1;
 }
@@ -88,14 +93,13 @@ svg {
   opacity: 0;
 }
 
-
-.line-chart-mark circle {
+.line-chart-mark, .line-chart-circle-text, .line-chart-mark path {
   transition: all 250ms;
+  cursor: pointer;
 }
 .line-chart-mark path {
   fill: none;
   stroke-width: 5;
   stroke-linejoin: round;
   stroke-linecap: round;
-  transition: all 250ms;
 }

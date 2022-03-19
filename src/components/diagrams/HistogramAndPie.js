@@ -48,11 +48,10 @@ export const HistogramAndPie = ({
   //   Attributes for react dropdown
   // all, large, non-large
   const attributes = [
-    { value: "0", label: "All-Size Industry" },
-    { value: "1", label: "250+ Industry" },
-    { value: "2", label: "<250 Industry" },
+    { value: "0", label: "All-Size Industry Status" },
+    { value: "1", label: "250+ Industry Status" },
+    { value: "2", label: "<250 Industry Status" },
   ];
-
   return (
     <div className="histogram">
       <div className="header">
@@ -106,6 +105,8 @@ export const HistogramAndPie = ({
             colorMapping={colorMapping}
             diagramSpace={diagramSpace}
             drawWidth={drawWidth}
+            hoverLegend={hoverLegend}
+            legendLabels = {colorMapping.domain()}
           />
         </g>
       </svg>
