@@ -19,7 +19,7 @@ export const HistogramAndPie = ({
   const data = useData();
   const [hoverLegend, setHoverLegend] = useState(null);
   // Dropdown state
-  const defaultSelected = 0;
+  const defaultSelected = '0';
   const [selected, setSelected] = useState(defaultSelected);
   if (!data) return <h1 className="no-data-title">Loading data...</h1>;
 

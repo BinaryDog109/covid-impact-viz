@@ -45,6 +45,14 @@ select * where {
         cw1:apply_AccreditedFinanceagreements_Percentage ?AccreditedFinanceagreements;        
 }
 ===============================
+IndustryGroup and initialtives
+PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
+select * where { 
+	?IndustryGroup a cw1:IndustryGroup .
+    ?IndustryGroup ?predicate ?num.
+    filter (contains(str(?predicate), "apply_")||contains(str(?predicate), "receive_")||contains(str(?predicate), "intend_")). 			
+}
+===============================
 Test:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select ?Industry ?applyValue ?receiveValue ?intendValue where { 

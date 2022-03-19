@@ -3,6 +3,7 @@ import "./App.css";
 import { HistogramAndPie } from "./components/diagrams/HistogramAndPie";
 import { GovernmentSchemaScatterPlot } from "./components/diagrams/GovernmentSchemaScatterPlot";
 import { Map } from "./components/diagrams/Map";
+import { IndustryGroupLineChart } from "./components/diagrams/IndustryGroupLineChart";
 
 const diagramSpace = {
   top: 22,
@@ -11,14 +12,14 @@ const diagramSpace = {
   right: 200,
 };
 
-const displayWidth = window.innerWidth;
-const displayHeight = window.innerHeight - 50;
+const displayWidth = 1280;
+const displayHeight = 930 - 50;
 const drawHeight = displayHeight - diagramSpace.top - diagramSpace.bottom;
 const drawWidth = displayWidth - diagramSpace.left - diagramSpace.right;
 
 function App() {
   return (
-    <div className="container">
+    <div className="container" style={{ width: displayWidth }}>
       <HistogramAndPie
         displayWidth={displayWidth}
         displayHeight={displayHeight}
@@ -43,6 +44,14 @@ function App() {
         drawHeight={drawHeight}
         drawWidth={drawWidth}
         scale={1.25}
+      />
+      <IndustryGroupLineChart
+        displayWidth={displayWidth}
+        displayHeight={displayHeight}
+        translateLeft={diagramSpace.left}
+        translateTop={diagramSpace.top}
+        drawHeight={drawHeight}
+        drawWidth={drawWidth}
       />
     </div>
   );

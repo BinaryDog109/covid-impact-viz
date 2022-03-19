@@ -3,20 +3,25 @@ import { csv } from "d3";
 
 import { predicateTypes } from "./predicateTypes";
 
-const governmentSchemeDataCsvUrl = "./sparql/government scheme.csv";
 
 const ontURI =
   "http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#";
 
-export const useGovernmentSchemeData = () => {
+// A general function to get data from government scheme worksheets
+export const useGovernmentSchemeData = (
+  governmentSchemeDataCsvUrl = "./sparql/government scheme.csv",
+  subject = "Industry",
+  predicate = "predicate",
+  value = "num"
+) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     async function fetchData() {
       const governmentSchemeData = await csv(
         governmentSchemeDataCsvUrl,
         (row) => {
-          row.Industry = row.Industry.replace(ontURI, "");
-          row.predicate = row.predicate.replace(ontURI, "");
+          row[subject] = row[subject].replace(ontURI, "");
+          row[predicate] = row[predicate].replace(ontURI, "");
           return row;
         }
       );
@@ -70,12 +75,12 @@ export const useGovernmentSchemeData = () => {
           const elem = filteredArray[i];
           if (i === 0) {
             // Initiating the merging process, this returns a merging function
-            merge = startMerge(trans(elem), "Industry");
+            merge = startMerge(trans(elem), subject);
           }
 
-          const newElem = trans(elem, "Industry", "predicate", "num");
+          const newElem = trans(elem, subject, predicate, value);
           const mergedElem = merge(newElem);
-          if (Object.keys(mergedElem).length === 4)
+          if (Object.keys(mergedElem).length === 4) 
             categorisedArray.push(mergedElem);
         }
         aggregated[type] = categorisedArray;

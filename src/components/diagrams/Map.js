@@ -96,7 +96,7 @@ export const Map = ({
         ? "GovernmentFundedSmallBusinessGrantOrLoanschemes"
         : predicate
     }Accessor`,
-    label: `Display ${predicate} apply percentage`,
+    label: `Selected: ${predicate} apply percentage`,
   }));
 
   return (
