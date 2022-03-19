@@ -19,6 +19,7 @@ export const IndustryGroupLineChart = ({
 }) => {
   const selectedInitialtiveString = "CoronavirusJobRetentionScheme";
   const [selected, setSelected] = useState(selectedInitialtiveString);
+  const [hover, setHover] = useState(null);
   const csvUrl = "./sparql/industry group initialtive.csv";
   const data = useGovernmentSchemeData(csvUrl, "IndustryGroup");
 
@@ -60,7 +61,7 @@ export const IndustryGroupLineChart = ({
   //   Attributes for the drop down menu
   const attributes = predicateTypes.map((predicate) => ({
     value: predicate,
-    label: `${predicate} Initialtive`,
+    label: `Selected: ${predicate} Initialtive`,
   }));
 
   return (
@@ -68,7 +69,7 @@ export const IndustryGroupLineChart = ({
       <div className="title">
         What is the Government Schemes status among diffenrent work force size?
       </div>
-      <div className="drop-down"  style={{ width: "30%", marginLeft: "auto", textAlign: "center" }}>
+      <div className="drop-down"  style={{ width: "70ch", marginLeft: "auto", textAlign: "center" }}>
         <ReactDropdown
           options={attributes}
           value={selected}
@@ -98,10 +99,13 @@ export const IndustryGroupLineChart = ({
               xMapping={xMapping}
               yAccessor={yAccessor}
               yMapping={yMapping}
+              formatter={d=>(d*100).toFixed(2)}
+              displayPercentage
+              hoverLegend={hover}
             />
           </g>
           <g transform={`translate(${10}, ${50})`}>
-            <ColorLegend drawWidth={drawWidth} colorMapping={colorMapping} />
+            <ColorLegend handleHover={setHover} hoverLegend={hover} deleteLegendText="Accessor" drawWidth={drawWidth} colorMapping={colorMapping} />
           </g>
         </g>
       </svg>

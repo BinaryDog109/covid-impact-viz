@@ -10,10 +10,12 @@ export const ColorLegend = ({
   opacity = 0.5,
   useCircle = false,
   hoverCircle = null,
+  deleteLegendText = "",
   handleHover = () => {},
 }) => (
   <g className="color-legend main-shape" transform={`translate(${drawWidth + offset}, 0)`}>
-    {colorMapping.domain().map((domainValue, index) => (
+    {colorMapping.domain().map((domainValue, index) => {
+      return (
       <g
         key={domainValue}
         // Opacity for the rest of the text next to circle/rect
@@ -45,14 +47,14 @@ export const ColorLegend = ({
         <g transform={`translate(${legendWidth + 5}, ${legendWidth})`}>
           <text>
             <tspan x="0" dx="0" dy="0">
-              {domainValue.substring(0, domainValueSplitIndex)}
+              {domainValue.replace(deleteLegendText, "").substring(0, domainValueSplitIndex)}
             </tspan>
             <tspan x="0" dx="0" dy="16">
-              {domainValue.substring(domainValueSplitIndex)}
+              {domainValue.replace(deleteLegendText, "").substring(domainValueSplitIndex)}
             </tspan>
           </text>
         </g>
       </g>
-    ))}
+    )})}
   </g>
 );
