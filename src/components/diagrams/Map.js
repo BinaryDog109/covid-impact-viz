@@ -1,13 +1,16 @@
 import { useData } from "../../dataset/useCountryAreaData";
 import {
-  geoNaturalEarth1,
-  geoPath,
-  schemeOranges,
+  schemeReds,
   extent,
   scaleThreshold,
   min,
+  scaleOrdinal,
 } from "d3";
 import { ColorLegend } from "../ColorLegend";
+import ReactDropdown from "react-dropdown";
+import { predicateTypes } from "../../dataset/predicateTypes";
+import { useState } from "react";
+import { MapMarks } from "../MapMarks";
 
 export const Map = ({
   displayWidth,
@@ -16,42 +19,41 @@ export const Map = ({
   translateTop,
   drawHeight,
   drawWidth,
+  scale,
 }) => {
   const data = useData();
+  const initialSelected = "AccreditedFinanceagreementsAccessor";
+  const [selected, setSelected] = useState(initialSelected);
   if (!data) return <h1>Loading...</h1>;
-  console.log(data);
 
   const { countryAreaData, areas } = data;
-  const featureCollection = {
-    type: "FeatureCollection",
-    features: [],
-  };
-  areas.forEach((area) => {
-    featureCollection.features.push(...area.features);
-  });
-
-  const projection = geoNaturalEarth1().fitSize(
-    [drawHeight, drawHeight],
-    featureCollection
-  );
-
-  const path = geoPath(projection);
 
   const continueAccessor = (record) => +record.continue;
   const countryNameAccessor = (record) => record.CountryArea;
   const temPauseAccessor = (record) => record.temPause;
   const permantStopAccessor = (elem) =>
     1 - permantStopAccessor(elem) - temPauseAccessor(elem);
-  const AccreditedFinanceagreementsAccesor = (record) =>
+  const AccreditedFinanceagreementsAccessor = (record) =>
     +record.AccreditedFinanceagreements;
-  const BusinessRatesholidayAccesor = (record) => +record.BusinessRatesholiday;
-  const CoronavirusJobRetentionSchemeAccesor = (record) =>
+  const BusinessRatesholidayAccessor = (record) => +record.BusinessRatesholiday;
+  const CoronavirusJobRetentionSchemeAccessor = (record) =>
     +record.CoronavirusJobRetentionScheme;
-  const DeferringVATpaymentsAccesor = (record) => +record.DeferringVATpayments;
-  const GovernmentFundedSmallBusinessGrantOrLoanschemesAccesor = (record) =>
+  const DeferringVATpaymentsAccessor = (record) => +record.DeferringVATpayments;
+  const GovernmentFundedSmallBusinessGrantOrLoanschemesAccessor = (record) =>
     +record.GovernmentFundedSmallBusinessGrantOrLoanschemes;
-  const HMRCTimeToPayschemeAccesor = (record) => +record.HMRCTimeToPayscheme;
-
+  const HMRCTimeToPayschemeAccessor = (record) => +record.HMRCTimeToPayscheme;
+  const accesors = {
+    continueAccessor,
+    countryNameAccessor,
+    temPauseAccessor,
+    permantStopAccessor,
+    AccreditedFinanceagreementsAccessor,
+    BusinessRatesholidayAccessor,
+    CoronavirusJobRetentionSchemeAccessor,
+    DeferringVATpaymentsAccessor,
+    GovernmentFundedSmallBusinessGrantOrLoanschemesAccessor,
+    HMRCTimeToPayschemeAccessor,
+  };
   const getScaleThreshold = (
     data,
     accessor = (d) => d,
@@ -63,22 +65,40 @@ export const Map = ({
     for (let i = 1; i <= elemNum - 1; i++) {
       thresholds.push(min(data, accessor) + distance * i);
     }
-    return scaleThreshold().domain(thresholds).range(schemeOranges[elemNum]);
+    return scaleThreshold().domain(thresholds).range(schemeReds[elemNum]);
   };
-
-  const getThresholdMapping = (data, accessor) => getScaleThreshold(data, accessor);
+  const getThresholdMapping = (data, accessor) =>
+    getScaleThreshold(data, accessor);
   const thresholdMapping = getThresholdMapping(
     countryAreaData,
-    continueAccessor
-  )
-  // Convert from threshold mapping to color mapping
-  const colorMapping = {}
-  colorMapping.domain = () => {
+    accesors[selected]
+  );
+  // Convert from threshold mapping to color mapping so it can be passed to ColorLegend
+  const converToColorMapping = (thresholdMapping) => {
+    const domain = [...thresholdMapping.domain()];
+    let prev = 0;
+    const domainArr = domain.reduce((acc, elem) => {
+      acc.push(`${(prev * 100).toFixed(2)}% ~ ${(elem * 100).toFixed(2)}%`);
+      prev = elem;
+      return acc;
+    }, []);
+    domainArr.push(`> ${(prev * 100).toFixed(2)}%`); // Last range
+    const colorMapping = scaleOrdinal()
+      .domain(domainArr)
+      .range([...thresholdMapping.range()]);
+    return colorMapping;
+  };
+  const colorMapping = converToColorMapping(thresholdMapping);
 
-    const domain = [...thresholdMapping.domain()]
-    domain.map()
-  }
-  colorMapping.range = () => [...thresholdMapping.range()]
+  const attributes = predicateTypes.map((predicate) => ({
+    value: `${
+      predicate === "Government-fundedSmallBusinessGrantOrLoanschemes"
+        ? "GovernmentFundedSmallBusinessGrantOrLoanschemes"
+        : predicate
+    }Accessor`,
+    label: `Display ${predicate} apply percentage`,
+  }));
+
   return (
     <div>
       <div className="map">
@@ -86,32 +106,31 @@ export const Map = ({
           What is the trading and initialtive application status in different
           areas?
         </div>
+        <div
+          className="drop-down"
+          style={{ width: "50%", marginLeft: "auto", textAlign: "center" }}
+        >
+          <ReactDropdown
+            options={attributes}
+            value={selected}
+            onChange={({ value }) => setSelected(value)}
+          />
+        </div>
         <svg width={displayWidth} height={displayHeight}>
-          <g className="map-mark" transform={`scale(1.4)`}>
-            <ColorLegend  />
-            {areas.map((area) => {
-              // area is a geojson object, while record is retrieved from the d3.csv data
-              const mapName = area.mapName;
-              const record = countryAreaData.find(
-                (elem) => countryNameAccessor(elem) === mapName
-              );
-              // Find the center of each area
-              const [textX, textY] = (path.centroid(area))
-
-              return (
-                <g key={area.mapName} className={`${area.mapName} map-area`}>
-                  {area.features.map((feature) => { 
-                    return (
-                    <path
-                      fill={thresholdMapping(continueAccessor(record))}
-                      className="feature"
-                      d={path(feature)}
-                    />
-                  )})}
-                  <text textAnchor="middle" x={textX} y={textY}>{area.mapName}:{(continueAccessor(record) * 100).toFixed(2)}%</text>
-                </g>
-              );
-            })}
+          <g className="map-mark" transform={`scale(${scale})`}>
+            <g transform={`translate(0, ${22})`}>
+              <ColorLegend colorMapping={colorMapping} drawWidth={drawWidth} />
+            </g>
+            <MapMarks
+              areas={areas}
+              countryAreaData={countryAreaData}
+              countryNameAccessor={countryNameAccessor}
+              drawHeight={drawHeight}
+              drawWidth={drawWidth}
+              thresholdMapping={thresholdMapping}
+              accesors={accesors}
+              selected={selected}
+            />
           </g>
         </svg>
       </div>

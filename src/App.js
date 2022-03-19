@@ -37,11 +37,12 @@ function App() {
       />
       <Map
         displayWidth={displayWidth}
-        displayHeight={displayHeight - 25}
+        displayHeight={displayHeight}
         translateLeft={diagramSpace.left}
         translateTop={diagramSpace.top}
         drawHeight={drawHeight}
         drawWidth={drawWidth}
+        scale={1.25}
       />
     </div>
   );

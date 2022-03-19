@@ -10,7 +10,7 @@ export const ColorLegend = ({
   opacity = 0.5,
   useCircle = false,
   hoverCircle = null,
-  handleHover = () => console.log("Hovered"),
+  handleHover = () => {},
 }) => (
   <g className="color-legend main-shape" transform={`translate(${drawWidth + offset}, 0)`}>
     {colorMapping.domain().map((domainValue, index) => (
@@ -23,7 +23,7 @@ export const ColorLegend = ({
           }
         onMouseEnter={() => handleHover(domainValue)}
         onMouseLeave={() => handleHover(null)}
-        cursor={"pointer"}
+        cursor={ "pointer" }
         transform={`translate(0, ${legendOffset * index})`}
       >
         {useCircle ? (

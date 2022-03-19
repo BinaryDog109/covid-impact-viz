@@ -47,7 +47,9 @@
 .main-shape text {
   fill: #635F5D;
 }
-
+.map-mark text {
+  fill: #726d69
+}
 .histogram .title, .scatter-plot .title, .map .title {
   font-size: 2.2em;
   padding-left: 22px;
