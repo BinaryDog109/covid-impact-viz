@@ -44,7 +44,7 @@ export const MapMarks = ({
             />
           );
         })}
-        <text textAnchor="middle" x={textX} y={textY}>
+        <text fontSize={"1.2rem"} fontWeight={600} textAnchor="middle" x={textX} y={textY}>
           {area.mapName}:{(accesors[selected](record) * 100).toFixed(2)}%
         </text>
       </g>
