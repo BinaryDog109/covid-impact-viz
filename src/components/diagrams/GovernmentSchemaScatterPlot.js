@@ -65,14 +65,14 @@ export const GovernmentSchemaScatterPlot = ({
   const percentageFormatter = (d) => parseInt(d * 100);
   const attributes = predicateTypes.map((predicate) => ({
     value: predicate,
-    label: `${predicate} Initialtive`,
+    label: `${predicate} Initiative`,
   }));
   const circleOpacity = 0.7;
   return (
     <div>
       <div className="scatter-plot">
         <div className="title">
-          What is the relationship between initialtive apply rate and receive
+          What is the relationship between initiative apply rate and receive
           rate?
         </div>
         <div style={{ width: "60ch", paddingLeft: "22px" }}>
@@ -93,7 +93,7 @@ export const GovernmentSchemaScatterPlot = ({
             fontSize={30}
             dy={60}
           >
-            Initialtive Apply Rates
+            Initiative Apply Rates
           </text>
           <text
             className="axis-label"
@@ -102,7 +102,7 @@ export const GovernmentSchemaScatterPlot = ({
             dy={0}
             transform={`translate(${-60}, ${drawHeight / 2}) rotate(-90)`}
           >
-            Initialtive Receive Rates
+            Initiative Receive Rates
           </text>
           <XAxisChannel
             formatter={percentageFormatter}

@@ -65,13 +65,13 @@ export const IndustryGroupLineChart = ({
   //   Attributes for the drop down menu
   const attributes = predicateTypes.map((predicate) => ({
     value: predicate,
-    label: `Selected: ${predicate} Initialtive`,
+    label: `Selected: ${predicate} Initiative`,
   }));
 
   return (
     <div className="line-chart">
       <div className="title">
-        What is the Government Schemes status among diffenrent work force size?
+        What is the Government Schemes status among different workforce size?
       </div>
       <div className="drop-down"  style={{ width: "70ch", marginLeft: "auto", textAlign: "center" }}>
         <ReactDropdown
@@ -130,7 +130,7 @@ export const IndustryGroupLineChart = ({
             dy={0}
             transform={`translate(${-60}, ${drawHeight / 2}) rotate(-90)`}
           >
-            Initialtive Rates
+            Initiative Rates
           </text>
         </g>
       </svg>

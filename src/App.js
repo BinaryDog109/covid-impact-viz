@@ -33,7 +33,7 @@ function App() {
         displayHeight={displayHeight}
         translateLeft={diagramSpace.left + 80}
         translateTop={diagramSpace.top + 25}
-        drawHeight={drawHeight}
+        drawHeight={drawHeight-50}
         drawWidth={drawWidth - 50}
       />
       <Map

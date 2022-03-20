@@ -1,4 +1,4 @@
-Histogram:
+# Histogram:
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix cw1: <http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#> 
 select ?Industry ?responseNum ?continue ?temPause
@@ -11,7 +11,7 @@ where {
 
 
 ==============================
-Pie Chart:
+# Pie Chart:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select ?industryGroup ?resposeNum ?continue ?temPause where { 
 	?industryGroup a cw1:IndustryGroup ;
@@ -22,7 +22,7 @@ select ?industryGroup ?resposeNum ?continue ?temPause where {
 }
 
 ===============================
-Scatter Plot:
+# Scatter Plot:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select * where { 
 	?Industry a cw1:SingleIndustry .
@@ -30,7 +30,7 @@ select * where {
     filter (contains(str(?predicate), "apply_")||contains(str(?predicate), "receive_")||contains(str(?predicate), "intend_")). 			
 }
 ===============================
-Map:
+# Map:
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select * where { 
 	?CountryArea a cw1:CountryArea ;
@@ -45,7 +45,7 @@ select * where {
         cw1:apply_AccreditedFinanceagreements_Percentage ?AccreditedFinanceagreements;        
 }
 ===============================
-IndustryGroup and initialtives
+# IndustryGroup and initialtives
 PREFIX cw1:<http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#>
 select * where { 
 	?IndustryGroup a cw1:IndustryGroup .

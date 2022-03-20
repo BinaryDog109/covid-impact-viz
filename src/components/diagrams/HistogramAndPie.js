@@ -56,7 +56,7 @@ export const HistogramAndPie = ({
     <div className="histogram">
       <div className="header">
         <div className="title">
-          What is the trading status among the respondents?
+          How is the trading status in different industries?
         </div>
         <div
           className="dropdown-container"
