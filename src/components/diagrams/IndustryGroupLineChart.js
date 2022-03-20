@@ -28,7 +28,6 @@ export const IndustryGroupLineChart = ({
   const data = useGovernmentSchemeData(csvUrl, "IndustryGroup");
 
   if (!data) return <h1>Loading...</h1>;
-  console.log(data);
   const groupedData = data[selected];
   const getPredicateString = (verb, initialtive) =>
     `${verb}_${initialtive}_Percentage`;
