@@ -65,7 +65,7 @@ export const PieChart = ({
         transform={`translate(${drawWidth + pieRadius + 5}, ${
           pieRadius * 2.5
         })`}
-        opacity={hoverLegend && hoverLegend !== legendLabels[index]? 0 : 1}
+        opacity={hoverLegend && hoverLegend !== legendLabels[index]? 0.2 : 1}
       >
         <path
           className="piePath"

@@ -1,0 +1,1361 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/emper/ontologies/2022/2/untitled-ontology-9#"
+     xml:base="http://www.semanticweb.org/emper/ontologies/2022/2/untitled-ontology-9"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:coursework1="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#"
+     xmlns:receive_Wehaven="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_Wehaven&apos;"
+     xmlns:untitled-ontology-9="http://www.semanticweb.org/emper/ontologies/2022/2/untitled-ontology-9#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To be used in representing the percentage of businesses either continuing to trade or who have temporarily paused or ceased trading, broken down by different categories, UK</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_AccreditedFinanceagreements_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_AccreditedFinanceagreements_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_BusinessRatesholiday_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_BusinessRatesholiday_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_CoronavirusJobRetentionScheme_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_CoronavirusJobRetentionScheme_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_DeferringVATpayments_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_DeferringVATpayments_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_HMRCTimeToPayscheme_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_HMRCTimeToPayscheme_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#continuePercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#continuePercentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#tradingStatusDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_AccreditedFinanceagreements_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_AccreditedFinanceagreements_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_BusinessRatesholiday_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_BusinessRatesholiday_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_CoronavirusJobRetentionScheme_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_CoronavirusJobRetentionScheme_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_DeferringVATpayments_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_DeferringVATpayments_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_HMRCTimeToPayscheme_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_HMRCTimeToPayscheme_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_NoneOfTheabove_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#intend_NoneOfTheabove_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#permanentlyCeasedPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#permanentlyCeasedPercentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#tradingStatusDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receiveSurveyNum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receiveSurveyNum">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#surveyDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_AccreditedFinanceagreements_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_AccreditedFinanceagreements_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_BusinessRatesholiday_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_BusinessRatesholiday_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_CoronavirusJobRetentionScheme_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_CoronavirusJobRetentionScheme_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_DeferringVATpayments_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_DeferringVATpayments_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_HMRCTimeToPayscheme_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_HMRCTimeToPayscheme_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_WehaventReceivedAnyThatWeAppliedfor_Percentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#receive_WehaventReceivedAnyThatWeAppliedfor_Percentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InitialtiveDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#respondPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#respondPercentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#surveyDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#respondSurveyNum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#respondSurveyNum">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#surveyDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#surveyDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#surveyDataProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#temporaryPausePercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#temporaryPausePercentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#tradingStatusDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#tradingStatusDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#tradingStatusDataProperty">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AccommodationAndFoodServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AccommodationAndFoodServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.206</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.782</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.871</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.806</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.249</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.422</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.027</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.182</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.122</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.18</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.404</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.235</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.061</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.137</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.398</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.012</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1634</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.035</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.633</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.251</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.596</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.178</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.306</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.129</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.316</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">516</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.806</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AdministrativeAndSupportServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#AdministrativeAndSupportServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.123</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.201</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.757</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.637</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.218</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.205</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.139</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.915</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.09</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.089</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.401</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.227</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.063</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.102</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.45</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage>*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2359</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.017</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.12</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.28</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.469</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.144</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.147</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.206</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.345</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">814</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.081</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ArtsEntertainmentAndRecreation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ArtsEntertainmentAndRecreation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.183</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.572</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.763</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.612</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.18</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.331</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.126</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.205</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.108</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.122</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.41</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.212</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.058</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.104</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.392</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">718</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.043</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.45</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.219</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.435</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.108</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.255</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.176</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.387</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">278</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.795</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Construction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Construction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.096</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.135</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.809</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.599</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.06</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.287</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.117</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.732</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.11</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.032</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.429</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.174</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.096</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.422</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1034</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.018</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.057</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.291</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.443</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.021</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.234</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.27</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.175</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">284</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.261</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Education -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Education">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.028</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.085</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.405</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.263</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.022</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.07</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.484</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.868</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.066</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.098</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.459</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.174</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.022</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.421</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">760</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.038</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.098</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.184</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.057</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.228</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.418</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">318</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.126</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#England -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#England">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.097</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.274</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.673</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.573</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.109</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.224</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.205</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.778</coursework1:continuePercentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.218</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250AccommodationAndFoodServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250AccommodationAndFoodServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">659</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.296</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">195</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250AdministrativeAndSupportServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250AdministrativeAndSupportServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1072</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.337</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">361</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250ArtsEntertainmentAndRecreation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250ArtsEntertainmentAndRecreation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">303</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.323</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250Construction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250Construction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">312</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.244</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">76</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250Education -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250Education">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">457</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.418</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">191</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250HumanHealthAndSocialWorkActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250HumanHealthAndSocialWorkActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">149</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.396</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250InformationAndCommunication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250InformationAndCommunication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">422</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.287</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">121</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250Manufacturing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250Manufacturing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1370</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.328</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">449</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250MiningAndQuarrying -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250MiningAndQuarrying">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250OtherServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250OtherServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250ProfessionalScientificAndTechnicalActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250ProfessionalScientificAndTechnicalActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">720</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.368</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">265</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250RealEstateActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250RealEstateActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250TransportationAndStorage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250TransportationAndStorage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">335</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.266</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">89</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250WaterSupplySewerageWasteManagementAndRemediationActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250WaterSupplySewerageWasteManagementAndRemediationActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">71</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.282</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#HumanHealthAndSocialWorkActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#HumanHealthAndSocialWorkActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.028</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.134</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.345</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.162</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.106</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.063</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.556</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.938</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.014</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.042</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.31</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.099</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.035</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.056</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.585</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.014</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">294</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.092</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.085</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.155</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.07</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.042</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.141</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.49</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">144</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.049</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InformationAndCommunication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#InformationAndCommunication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.038</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.082</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.401</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.474</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.036</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.137</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.373</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.07</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.26</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.163</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.029</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.067</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.587</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1216</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.01</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.031</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.154</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.397</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.017</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.106</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.127</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.344</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">418</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0451232</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250AccommodationAndFoodServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250AccommodationAndFoodServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">975</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.329</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">321</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250AdministrativeAndSupportServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250AdministrativeAndSupportServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1287</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.352</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">453</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250ArtsEntertainmentAndRecreation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250ArtsEntertainmentAndRecreation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">415</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.434</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250Construction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250Construction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">722</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.288</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">208</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250Education -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250Education">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">303</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.419</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">127</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250HumanHealthAndSocialWorkActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250HumanHealthAndSocialWorkActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">145</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.586</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250InformationAndCommunication -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250InformationAndCommunication">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">794</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.374</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">297</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250Manufacturing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250Manufacturing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1785</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.363</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">648</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250MiningAndQuarrying -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250MiningAndQuarrying">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250OtherServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250OtherServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">108</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250ProfessionalScientificAndTechnicalActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250ProfessionalScientificAndTechnicalActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1303</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.359</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">468</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250RealEstateActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250RealEstateActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">112</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250TransportationAndStorage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250TransportationAndStorage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">528</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.366</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">193</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250WaterSupplySewerageWasteManagementAndRemediationActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250WaterSupplySewerageWasteManagementAndRemediationActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.385</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Manufacturing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Manufacturing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.086</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.14</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.635</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.443</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.048</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.193</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.26</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.79</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.066</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.081</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.383</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.167</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.028</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.092</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.481</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3155</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.013</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.079</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.199</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.33</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.026</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.147</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.237</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.348</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1097</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.206</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#MiningAndQuarrying -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#MiningAndQuarrying">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#NorthernIreland -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#NorthernIreland">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.065</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.304</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.652</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.402</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.109</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.13</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.239</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.728</coursework1:continuePercentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.272</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#OtherServiceActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#OtherServiceActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">137</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ProfessionalScientificAndTechnicalActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#ProfessionalScientificAndTechnicalActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.081</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.126</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.622</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.662</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.049</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.186</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.207</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.967</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.074</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.073</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.35</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.228</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.023</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.083</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.503</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2023</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.023</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.078</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.216</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.518</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.022</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.146</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.176</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.362</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">733</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.03</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#RealEstateActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#RealEstateActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</coursework1:receiveSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Scotland -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Scotland">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.098</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.29</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.717</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.63</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.075</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.235</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.165</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.776</coursework1:continuePercentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.217</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#TransportationAndStorage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#TransportationAndStorage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.092</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.241</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.766</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.553</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.064</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.248</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.167</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.915</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.074</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.096</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.355</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.199</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.021</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.078</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.489</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">863</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.025</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.145</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.287</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.44</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.025</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.188</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.184</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.327</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">282</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.085</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#UK -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#UK">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.099</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.274</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.672</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.564</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.112</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.223</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.207</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.767</coursework1:continuePercentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.228</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Wales -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#Wales">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#CountryArea"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.127</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.387</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.738</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.651</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.137</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.255</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.134</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.762</coursework1:continuePercentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.011</coursework1:permanentlyCeasedPercentage>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.227</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WaterSupplySewerageWasteManagementAndRemediationActivities -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WaterSupplySewerageWasteManagementAndRemediationActivities">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.1</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.157</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.686</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.571</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.057</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.214</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.214</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.071</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.071</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.386</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.229</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.029</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.143</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.457</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">201</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.043</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.043</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.286</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.371</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.014</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.157</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.243</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.348</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.1</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#allWorkforceIndustryGroup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#allWorkforceIndustryGroup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.099</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.274</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.672</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.564</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.112</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.223</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.207</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.767</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.08</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.091</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.368</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.19</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.039</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.088</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.482</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17623</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.018</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.191</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.222</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.427</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.07</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.168</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.189</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.347</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6114</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.228</coursework1:temporaryPausePercentage>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The set of industries of all workforce sizes</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#largeWorkforceIndustryGroup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#largeWorkforceIndustryGroup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.079</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.279</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.647</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.571</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.073123</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.222</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.223</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.798</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.072</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.094</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.37</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.169</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.027</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.078</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.486</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7181</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.011</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.224</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.461</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.046</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.168</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.163</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.321</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2305</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.197</coursework1:temporaryPausePercentage>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The set of industries of workforce size 250+</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#midWorkforceIndustryGroup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#midWorkforceIndustryGroup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9116</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.379</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3452</coursework1:respondSurveyNum>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The set of industries of workforce size between 100-249</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#nonLargeWorkforceIndustryGroup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#nonLargeWorkforceIndustryGroup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.112</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.272</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.687</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.56</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.135</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.224</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.198</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.748</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.085</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.089</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.367</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.202</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.046</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.094</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.48</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.023</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.186</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.221</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.407</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.085</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.168</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.205</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.247</coursework1:temporaryPausePercentage>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The set of industries of workforce size between 0-250</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#smallWorkforceIndustryGroup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#smallWorkforceIndustryGroup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#IndustryGroup"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1326</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.269</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">357</coursework1:respondSurveyNum>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The set of industries of workforce size between 0-99</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#GT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1180</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.292</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">344</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#LT250SingleIndustry"/>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1819</coursework1:receiveSurveyNum>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.377</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">686</coursework1:respondSurveyNum>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#WholesaleAndRetailTrade;RepairOfMotorVehiclesAndMotorcycles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tianyiyuan/ontologies/comp6214/coursework1#SingleIndustry"/>
+        <coursework1:apply_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.09</coursework1:apply_AccreditedFinanceagreements_Percentage>
+        <coursework1:apply_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.446</coursework1:apply_BusinessRatesholiday_Percentage>
+        <coursework1:apply_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.726</coursework1:apply_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:apply_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.601</coursework1:apply_DeferringVATpayments_Percentage>
+        <coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.133</coursework1:apply_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:apply_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.25</coursework1:apply_HMRCTimeToPayscheme_Percentage>
+        <coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.155</coursework1:apply_WeHaveNotAppliedForAnyOfTheseinitiatives_Percentage>
+        <coursework1:continuePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.752</coursework1:continuePercentage>
+        <coursework1:intend_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.083</coursework1:intend_AccreditedFinanceagreements_Percentage>
+        <coursework1:intend_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.093</coursework1:intend_BusinessRatesholiday_Percentage>
+        <coursework1:intend_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.321</coursework1:intend_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:intend_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.158</coursework1:intend_DeferringVATpayments_Percentage>
+        <coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.042</coursework1:intend_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:intend_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.076</coursework1:intend_HMRCTimeToPayscheme_Percentage>
+        <coursework1:intend_NoneOfTheabove_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.538</coursework1:intend_NoneOfTheabove_Percentage>
+        <coursework1:permanentlyCeasedPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</coursework1:permanentlyCeasedPercentage>
+        <coursework1:receiveSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2999</coursework1:receiveSurveyNum>
+        <coursework1:receive_AccreditedFinanceagreements_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.015</coursework1:receive_AccreditedFinanceagreements_Percentage>
+        <coursework1:receive_BusinessRatesholiday_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.334</coursework1:receive_BusinessRatesholiday_Percentage>
+        <coursework1:receive_CoronavirusJobRetentionScheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.239</coursework1:receive_CoronavirusJobRetentionScheme_Percentage>
+        <coursework1:receive_DeferringVATpayments_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.469</coursework1:receive_DeferringVATpayments_Percentage>
+        <coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.091</coursework1:receive_Government-fundedSmallBusinessGrantOrLoanschemes_Percentage>
+        <coursework1:receive_HMRCTimeToPayscheme_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.183</coursework1:receive_HMRCTimeToPayscheme_Percentage>
+        <coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.16</coursework1:receive_WehaventReceivedAnyThatWeAppliedfor_Percentage>
+        <coursework1:respondPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.343</coursework1:respondPercentage>
+        <coursework1:respondSurveyNum rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1030</coursework1:respondSurveyNum>
+        <coursework1:temporaryPausePercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.243</coursework1:temporaryPausePercentage>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
